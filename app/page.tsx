@@ -28,7 +28,7 @@ export default function Home() {
         <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-[#00C265]/5 rounded-full blur-[150px] pointer-events-none" />
         
         {/* Hero Content */}
-        <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 pt-12 sm:pt-24 pb-16 sm:pb-24 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-8 z-10 relative">
+        <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-10 pt-10 sm:pt-16 pb-10 sm:pb-12 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-8 z-10 relative">
           
           {/* Left Side: Text */}
           <div className="w-full lg:w-[60%] flex flex-col items-start text-left gap-5 z-10">
