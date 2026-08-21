@@ -104,6 +104,8 @@ export default function Solutions() {
           })}
         </div>
 
+        {/* hhh */}
+
         {/* Dark Banner */}
         <div className="w-full bg-[#040f1a] rounded-2xl p-6 sm:p-10 grid grid-cols-2 lg:flex lg:flex-nowrap gap-6 sm:gap-8 shadow-2xl">
           {features.map((feat, idx) => {
