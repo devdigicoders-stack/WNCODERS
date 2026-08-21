@@ -1,81 +1,168 @@
-import React from 'react';
+"use client";
+import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowUpRight } from 'react-icons/lu';
+import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
 
 export default function Portfolio() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const autoScrollTimer = useRef<NodeJS.Timeout | null>(null);
+  const resumeTimer = useRef<NodeJS.Timeout | null>(null);
+
+  const startAutoScroll = () => {
+    if (autoScrollTimer.current) clearInterval(autoScrollTimer.current);
+    autoScrollTimer.current = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          // Loop back to start
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+        }
+      }
+    }, 2500); // Scroll every 2.5 seconds
+  };
+
+  const handleInteraction = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -350 : 350, behavior: 'smooth' });
+    }
+
+    // Pause auto scroll
+    if (autoScrollTimer.current) clearInterval(autoScrollTimer.current);
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+
+    // Resume after 5 seconds
+    resumeTimer.current = setTimeout(() => {
+      startAutoScroll();
+    }, 5000);
+  };
+
+  useEffect(() => {
+    startAutoScroll();
+    return () => {
+      if (autoScrollTimer.current) clearInterval(autoScrollTimer.current);
+      if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    };
+  }, []);
+
   const projects = [
     {
       title: "Fintech Dashboard",
       category: "Web Application",
-      image: "/image.png",
-      bg: "bg-[#f0f4f8]"
+      image: "/image copy 6.png",
     },
     {
-      title: "E-Commerce App",
+      title: "E-Commerce Platform",
+      category: "Web Development",
+      image: "/image copy 5.png",
+    },
+    {
+      title: "On-Demand Delivery App",
       category: "Mobile Application",
-      image: "/image copy.png",
-      bg: "bg-[#eefcf5]"
+      image: "/image copy 4.png",
     },
     {
-      title: "Healthcare Portal",
-      category: "UI/UX Design",
-      image: "/image.png",
-      bg: "bg-[#f4effc]"
+      title: "Cloud Migration",
+      category: "Cloud Solutions",
+      image: "/image copy 7.png",
+    },
+    // Duplicate for scrolling feel
+    {
+      title: "Fintech Dashboard",
+      category: "Web Application",
+      image: "/image copy 6.png",
+    },
+    {
+      title: "E-Commerce Platform",
+      category: "Web Development",
+      image: "/image copy 5.png",
+    },
+    {
+      title: "On-Demand Delivery App",
+      category: "Mobile Application",
+      image: "/image copy 4.png",
+    },
+    {
+      title: "Cloud Migration",
+      category: "Cloud Solutions",
+      image: "/image copy 7.png",
     }
   ];
 
   return (
-    <section className="w-full bg-[#f8f9fa] py-24 px-6 sm:px-10">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase block mb-4">
-              Our Portfolio
-            </span>
-            <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold leading-tight">
-              Latest Featured Projects
-            </h2>
+    <section className="w-full bg-white py-24 px-6 sm:px-10 overflow-hidden relative">
+      <div className="max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
+        
+        {/* Left Content Area */}
+        <div className="w-full lg:w-auto lg:max-w-[400px] shrink-0">
+          <span className="text-[#00C265] text-[13px] font-bold tracking-[0.15em] uppercase mb-4 block">
+            OUR WORK
+          </span>
+          <h2 className="text-[#040f1a] text-2xl md:text-[32px] font-bold leading-tight mb-8">
+            Projects That Speak <br className="hidden lg:block"/> For Themselves
+          </h2>
+          
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <Link href="/services" className="inline-flex items-center gap-2 px-6 py-2.5 border-[1.5px] border-[#00C265] text-[#00C265] hover:bg-[#00C265] hover:text-white rounded-md font-bold transition-colors">
+              View All Projects <LuArrowRight size={18} />
+            </Link>
+            
+            <div className="flex items-center gap-3">
+              <button 
+                onClick={() => handleInteraction('left')}
+                className="w-10 h-10 rounded-full border border-gray-200 text-gray-500 flex items-center justify-center hover:border-[#00C265] hover:text-[#00C265] hover:bg-[#00C265]/5 transition-all"
+              >
+                <LuArrowLeft size={20} />
+              </button>
+              <button 
+                onClick={() => handleInteraction('right')}
+                className="w-10 h-10 rounded-full bg-[#00C265] text-white flex items-center justify-center hover:bg-[#00a355] transition-all shadow-[0_4px_15px_rgba(0,194,101,0.4)]"
+              >
+                <LuArrowRight size={20} />
+              </button>
+            </div>
           </div>
-          <Link href="/portfolio" className="text-[#00C265] font-bold hover:text-[#009b50] transition-colors flex items-center gap-2 group">
-            View All Projects 
-            <LuArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Right Scroll Area */}
+        <style>{`
+          .hide-scroll::-webkit-scrollbar { display: none; }
+          .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        `}</style>
+
+        <div 
+          ref={scrollRef}
+          className="w-full lg:flex-1 overflow-x-auto pb-8 relative hide-scroll flex gap-6 snap-x snap-mandatory"
+        >
           {projects.map((project, index) => (
-            <div key={index} className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-500 border border-gray-100 flex flex-col">
+            <div key={index} className="w-[280px] md:w-[340px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 shrink-0 flex flex-col group cursor-pointer snap-start">
               
               {/* Image Container */}
-              <div className={`w-full h-[280px] ${project.bg} relative overflow-hidden`}>
+              <div className="w-full h-[240px] bg-gray-50 relative overflow-hidden">
                 <Image 
                   src={project.image} 
                   alt={project.title}
                   fill
-                  className="object-cover opacity-90 group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  unoptimized
                 />
-                <div className="absolute inset-0 bg-[#040f1a]/0 group-hover:bg-[#040f1a]/10 transition-colors duration-500"></div>
               </div>
               
-              {/* Content Container */}
-              <div className="p-8 flex flex-col flex-1 relative bg-white">
-                <span className="text-[#00C265] text-xs font-bold tracking-[0.1em] uppercase mb-3 block">
-                  {project.category}
-                </span>
-                <h3 className="text-[#040f1a] text-2xl font-bold mb-4 group-hover:text-[#00C265] transition-colors">
+              {/* Content */}
+              <div className="p-6 bg-white border-t border-gray-50">
+                <h3 className="text-[#040f1a] text-lg font-bold mb-1 group-hover:text-[#00C265] transition-colors">
                   {project.title}
                 </h3>
-                
-                <div className="mt-auto pt-6 flex items-center gap-2 text-gray-500 font-semibold group-hover:text-[#040f1a] transition-colors">
-                  <span className="text-sm">View Case Study</span>
-                  <LuArrowUpRight className="opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
-                </div>
+                <span className="text-gray-500 text-[13px]">
+                  {project.category}
+                </span>
               </div>
-
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

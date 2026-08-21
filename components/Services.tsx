@@ -1,30 +1,25 @@
 import React from 'react';
+import Link from 'next/link';
 import { 
-  LuAppWindow, 
-  LuSmartphone, 
-  LuPenTool, 
-  LuCloud, 
   LuCode, 
-  LuInfinity, 
-  LuUserCheck, 
-  LuSend 
+  LuSmartphone, 
+  LuCloud, 
+  LuPenTool, 
+  LuUsers, 
+  LuMegaphone,
+  LuArrowRight
 } from 'react-icons/lu';
 
 const services = [
   {
     title: 'Web Development',
-    description: 'Custom websites and web applications built with modern technologies.',
-    icon: LuAppWindow,
+    description: 'Responsive, scalable and high-performance websites.',
+    icon: LuCode,
   },
   {
     title: 'Mobile App Development',
-    description: 'Native & cross-platform mobile apps for iOS and Android.',
+    description: 'iOS & Android apps that deliver seamless experiences.',
     icon: LuSmartphone,
-  },
-  {
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive and user-centric designs that enhance experiences.',
-    icon: LuPenTool,
   },
   {
     title: 'Cloud Solutions',
@@ -32,62 +27,62 @@ const services = [
     icon: LuCloud,
   },
   {
-    title: 'Software Development',
-    description: 'Robust software solutions tailored to your business requirements.',
-    icon: LuCode,
-  },
-  {
-    title: 'DevOps & CI/CD',
-    description: 'Automate, deploy and deliver your applications faster and better.',
-    icon: LuInfinity,
+    title: 'UI/UX Design',
+    description: 'Creative designs that enhance user experience and engagement.',
+    icon: LuPenTool,
   },
   {
     title: 'IT Consulting',
-    description: 'Expert guidance to help you make the right technology decisions.',
-    icon: LuUserCheck,
+    description: 'Expert guidance to optimize your tech strategy and operations.',
+    icon: LuUsers,
   },
   {
     title: 'Digital Marketing',
-    description: 'Grow your brand, reach more customers and boost online presence.',
-    icon: LuSend,
+    description: 'Data-driven marketing strategies to grow your brand and reach.',
+    icon: LuMegaphone,
   },
 ];
 
 export default function Services() {
   return (
-    <section className="w-full bg-[#f8f9fa] pt-4 pb-24 px-6 sm:px-10">
+    <section className="w-full bg-[#f8f9fa] py-20 px-6 sm:px-10">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase">
-            Our Services
-          </span>
-          <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold mt-4 mb-6 leading-tight">
-            End-to-End IT Solutions <br className="hidden md:block" /> For Your Business
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-[15px] leading-relaxed">
-            We combine advanced technologies and industry expertise to build powerful solutions that drive growth and efficiency.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase mb-3 block">
+              OUR SERVICES
+            </span>
+            <h2 className="text-[#040f1a] text-3xl md:text-[36px] font-bold leading-tight">
+              End-to-End Digital <span className="text-[#00C265]">Solutions</span>
+            </h2>
+          </div>
+          <Link href="/services" className="inline-flex items-center gap-2 px-6 py-2.5 border-[1.5px] border-[#00C265] text-[#00C265] hover:bg-[#00C265] hover:text-white rounded font-bold transition-colors">
+            View All Services <LuArrowRight size={18} />
+          </Link>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Services Grid - 6 columns on extra large screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div 
                 key={index} 
-                className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all hover:-translate-y-1 duration-300 group"
+                className="bg-white rounded-[16px] p-4 shadow-md hover:shadow-lg hover:-translate-y-1 border-[1.5px] border-gray-100 hover:border-[#00C265] transition-all duration-300 group flex flex-col h-full cursor-pointer relative"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#00C265]/10 flex items-center justify-center text-[#00C265] mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Icon size={24} strokeWidth={1.5} />
+                <div className="text-[#00C265] mb-2.5">
+                  <Icon size={30} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="text-[#040f1a] text-lg font-bold mb-3">
+                <h3 className="text-[#040f1a] text-[15px] font-bold mb-2 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-500 text-[13px] leading-relaxed mb-4 flex-grow">
                   {service.description}
                 </p>
+                <div className="mt-auto flex justify-end">
+                  <LuArrowRight size={18} className="text-[#00C265]" />
+                </div>
               </div>
             );
           })}

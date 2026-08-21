@@ -68,7 +68,7 @@ export default function BlogPage() {
     <main className="w-full flex flex-col items-center justify-center min-h-screen bg-[#f8f9fa]">
       
       {/* Hero Section */}
-      <section className="w-full bg-[#040f1a] relative overflow-hidden py-20 px-6 sm:px-10">
+      <section className="w-full bg-[#040f1a] relative overflow-hidden pt-10 pb-16 md:py-20 px-6 sm:px-10">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00C265]/10 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
@@ -128,7 +128,7 @@ export default function BlogPage() {
           </div>
           
           {/* Right Column: Image */}
-          <div className="relative h-[300px] lg:h-[400px] w-full hidden lg:block">
+          <div className="relative h-[300px] lg:h-[400px] w-full block">
             <Image 
               src={`/bloghero.png?t=${new Date().getTime()}`} 
               alt="Blog Hero Image" 

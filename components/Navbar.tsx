@@ -42,7 +42,7 @@ export default function Navbar() {
                 alt="WORKNESTCONNECT Logo"
                 width={240}
                 height={60}
-                className="w-auto h-8 sm:h-10 object-contain"
+                className="w-auto h-12 sm:h-16 object-contain"
                 priority
               />
             </Link>

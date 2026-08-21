@@ -75,35 +75,6 @@ export default function CTA() {
       )}
     </section>
 
-    {/* Newsletter Section */}
-    <section className="w-full bg-[#f8f9fa] py-16 sm:py-20 px-6 sm:px-10 border-t border-gray-200">
-      <div className="max-w-[1200px] mx-auto bg-white rounded-[2rem] p-8 sm:p-14 shadow-[0_15px_50px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-12">
-        <div className="lg:w-[45%] text-center lg:text-left">
-          <span className="inline-block px-4 py-1.5 bg-[#00C265]/10 text-[#00C265] text-xs font-bold tracking-widest uppercase rounded-full mb-4">Newsletter</span>
-          <h3 className="text-[#040f1a] text-3xl sm:text-4xl font-bold mb-4 leading-tight">Stay Ahead of the Curve</h3>
-          <p className="text-gray-500 text-[16px] leading-relaxed">
-            Subscribe to our newsletter and get the latest insights, tech trends, and exclusive resources delivered straight to your inbox.
-          </p>
-        </div>
-        <div className="lg:w-[50%] w-full">
-          <form className="flex flex-col sm:flex-row gap-3 w-full" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Enter your email address" 
-              className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-[#00C265] focus:ring-2 focus:ring-[#00C265]/20 transition-all text-gray-800 placeholder-gray-400 flex-grow text-[15px]"
-              required 
-            />
-            <button 
-              type="submit" 
-              className="px-8 py-4 bg-[#040f1a] hover:bg-[#00C265] text-white rounded-xl font-bold text-[15px] transition-all whitespace-nowrap shadow-lg shadow-black/5 hover:shadow-[#00C265]/25 hover:-translate-y-0.5"
-            >
-              Subscribe Now
-            </button>
-          </form>
-          <p className="text-gray-400 text-xs mt-4 text-center lg:text-left font-medium">* We respect your privacy. No spam, ever.</p>
-        </div>
-      </div>
-    </section>
     </>
   );
 }

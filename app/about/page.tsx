@@ -1,272 +1,411 @@
 import React from 'react';
 import Image from 'next/image';
-import CTA from '../../components/CTA';
-import { FaLaptopCode, FaGlobe, FaShieldAlt, FaRocket, FaCheckCircle, FaUsers, FaChartLine } from 'react-icons/fa';
-import { LuTarget, LuEye, LuBriefcase } from 'react-icons/lu';
-
+import { 
+  LuArrowRight, LuUsers, LuRocket, LuTarget, LuChartBar, 
+  LuLaptop, LuLayoutTemplate, LuSmartphone, LuMegaphone, LuBot, 
+  LuCloud, LuPaintbrush, LuDatabase, LuCode, LuBuilding, 
+  LuCircleCheck, LuSearch, LuLightbulb, LuPenTool, LuX,
+  LuUpload, LuTrendingUp 
+} from 'react-icons/lu';
+import { FaUsers, FaRocket, FaBullseye, FaChartLine, FaCheckCircle, FaSearch, FaPencilAlt, FaCode } from 'react-icons/fa';
 export default function AboutPage() {
   return (
     <main className="w-full flex flex-col items-center justify-center min-h-screen bg-white">
       
       {/* 1. Hero Section (The Merger) */}
-      <section className="w-full bg-[#040f1a] relative overflow-hidden py-32 px-6 sm:px-10 text-center">
+      <section className="w-full bg-[#040f1a] relative overflow-hidden pt-16 pb-10 lg:pt-20 lg:pb-16 px-6 sm:px-10">
         {/* Background decorations */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute -top-[20%] -left-[10%] w-[500px] h-[500px] bg-[#00C265]/10 rounded-full blur-[120px]" />
-          <div className="absolute -bottom-[20%] -right-[10%] w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#00C265]/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#00C265]/5 rounded-full blur-[150px]" />
         </div>
         
-        <div className="max-w-[1000px] mx-auto relative z-10">
-          <span className="text-[#00C265] text-sm font-bold tracking-[0.2em] uppercase mb-6 block">
-            The Birth of a New Era
-          </span>
-          <h1 className="text-white text-4xl md:text-[56px] font-bold leading-tight mb-8">
-            Two Legacies. <span className="text-[#00C265]">One Visionary Future.</span>
-          </h1>
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Welcome to WNCoders—the ultimate synergy of Digicoders Technologies and WorkNest Connect. We've merged decades of deep technical expertise with modern innovation to redefine global IT solutions.
-          </p>
-        </div>
-      </section>
-
-      {/* 2. The Merger Story */}
-      <section className="w-full py-24 px-6 sm:px-10 bg-white">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="flex gap-4 mb-6">
-              <div className="w-16 h-16 bg-[#040f1a] rounded-xl flex items-center justify-center text-[#00C265] text-3xl font-bold">D</div>
-              <div className="flex items-center text-gray-400 text-2xl">+</div>
-              <div className="w-16 h-16 bg-[#00C265] rounded-xl flex items-center justify-center text-white text-3xl font-bold">W</div>
-            </div>
-            <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold leading-tight mb-6">
-              A Partnership Built on Excellence
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              For years, **Digicoders Technologies Private Limited** established itself as a titan in software development and technical training, building robust foundations for enterprises. Meanwhile, **WorkNest Connect** emerged as a forward-thinking agency, crafting modern, scalable, and stunning IT solutions for a global audience.
+        <div className="max-w-[1400px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Left Content */}
+          <div className="text-left">
+            <span className="text-[#00C265] text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
+              ABOUT US
+            </span>
+            <h1 className="text-white text-4xl md:text-[48px] lg:text-[56px] font-bold leading-[1.1] mb-6">
+              Two Teams.<br />
+              <span className="text-[#00C265]">One Vision.</span>
+            </h1>
+            <p className="text-gray-300 text-base md:text-lg max-w-xl leading-relaxed mb-8">
+              DigiCoders Technologies and WorkNest Connect come together to deliver powerful digital solutions that drive business growth and create long-term value.
             </p>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              Recognizing that our strengths complement each other perfectly, we decided to unite. Today, as **WNCoders**, we bring you the unwavering reliability of a legacy firm combined with the agile, cutting-edge innovation of a modern tech startup. 
-            </p>
-          </div>
-          <div className="relative">
-            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-gray-100 rounded-3xl overflow-hidden relative shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#040f1a]/5 to-[#00C265]/10 mix-blend-overlay"></div>
-              {/* Placeholder for real team/office merger photo */}
-              <div className="w-full h-full flex flex-col items-center justify-center text-gray-400 bg-gray-50 border-2 border-dashed border-gray-200">
-                <LuBriefcase size={64} className="mb-4 text-gray-300" />
-                <span className="font-semibold text-lg">Merger Image Placeholder</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Mission & Vision */}
-      <section className="w-full py-24 px-6 sm:px-10 bg-[#f8f9fa]">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-white p-12 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-[#00C265]/10 rounded-2xl flex items-center justify-center mb-8">
-              <LuTarget className="text-[#00C265]" size={32} />
-            </div>
-            <h3 className="text-[#040f1a] text-3xl font-bold mb-4">Our Mission</h3>
-            <p className="text-gray-600 text-[17px] leading-relaxed">
-              To empower businesses globally by delivering scalable, secure, and innovative digital solutions. We strive to bridge the gap between complex technological challenges and elegant, user-centric software that drives real business growth.
-            </p>
-          </div>
-          <div className="bg-[#040f1a] p-12 rounded-3xl shadow-xl border border-gray-800 hover:shadow-2xl hover:shadow-[#00C265]/10 transition-shadow duration-300 relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#00C265] rounded-full blur-[80px] opacity-30"></div>
-            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 relative z-10">
-              <LuEye className="text-[#00C265]" size={32} />
-            </div>
-            <h3 className="text-white text-3xl font-bold mb-4 relative z-10">Our Vision</h3>
-            <p className="text-gray-300 text-[17px] leading-relaxed relative z-10">
-              To become the world's most trusted and innovative IT partner. We envision a future where technology seamlessly integrates with human potential, and where WNCoders is the driving force behind the next generation of digital transformation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Combined Strengths */}
-      <section className="w-full py-24 px-6 sm:px-10 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase mb-4 block">Why WNCoders?</span>
-            <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold">The Power of Synergy</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: FaLaptopCode, title: "Deep Technical Roots", desc: "Inheriting Digicoders' robust engineering practices." },
-              { icon: FaRocket, title: "Agile Innovation", desc: "Bringing WorkNest Connect's modern, rapid development lifecycle." },
-              { icon: FaGlobe, title: "Global Reach", desc: "Serving clients from local enterprises to international brands." },
-              { icon: FaShieldAlt, title: "Enterprise Security", desc: "Uncompromised data protection and scalable infrastructure." }
-            ].map((feature, i) => (
-              <div key={i} className="p-8 border border-gray-100 rounded-2xl hover:border-[#00C265]/30 hover:bg-[#00C265]/5 transition-colors group">
-                <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-[#00C265] transition-colors mb-6">
-                  <feature.icon className="text-[#00C265] group-hover:text-white transition-colors" size={24} />
-                </div>
-                <h4 className="text-xl font-bold text-[#040f1a] mb-3">{feature.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. By The Numbers */}
-      <section className="w-full py-12 px-6 sm:px-10 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="bg-[#040f1a] rounded-[2rem] p-12 md:p-20 shadow-[0_20px_50px_rgba(4,15,26,0.1)] relative overflow-hidden">
             
-            {/* Background Glow Effects */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00C265] rounded-full blur-[100px] opacity-20"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-[100px] opacity-10"></div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center relative z-10 divide-x-0 md:divide-x divide-gray-800">
-              <div className="flex flex-col items-center justify-center">
-                <div className="text-5xl md:text-6xl font-bold mb-3 text-white">10<span className="text-[#00C265]">+</span></div>
-                <div className="text-gray-400 font-bold uppercase tracking-[0.15em] text-xs">Years Combined Exp.</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <div className="text-5xl md:text-6xl font-bold mb-3 text-white">500<span className="text-[#00C265]">+</span></div>
-                <div className="text-gray-400 font-bold uppercase tracking-[0.15em] text-xs">Projects Delivered</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <div className="text-5xl md:text-6xl font-bold mb-3 text-white">50<span className="text-[#00C265]">+</span></div>
-                <div className="text-gray-400 font-bold uppercase tracking-[0.15em] text-xs">Expert Developers</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <div className="text-5xl md:text-6xl font-bold mb-3 text-white">99<span className="text-[#00C265]">%</span></div>
-                <div className="text-gray-400 font-bold uppercase tracking-[0.15em] text-xs">Client Satisfaction</div>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <button className="w-full sm:w-auto px-6 py-3 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-lg shadow-[#00C265]/20 flex items-center justify-center gap-2">
+                Explore Partnership <LuArrowRight size={18} />
+              </button>
+              <button className="w-full sm:w-auto px-6 py-3 bg-transparent border-2 border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                Start a Project <LuArrowRight size={18} className="text-[#00C265]" />
+              </button>
             </div>
-            
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Core Values */}
-      <section className="w-full py-24 px-6 sm:px-10 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase mb-4 block">Our DNA</span>
-            <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold">Our Core Values</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#f8f9fa] p-10 rounded-2xl flex flex-col items-center text-center">
-              <FaCheckCircle className="text-[#00C265] mb-6" size={40} />
-              <h4 className="text-xl font-bold text-[#040f1a] mb-3">Integrity</h4>
-              <p className="text-gray-500 text-[15px]">We believe in complete transparency and honesty in every line of code we write and every promise we make.</p>
-            </div>
-            <div className="bg-[#f8f9fa] p-10 rounded-2xl flex flex-col items-center text-center">
-              <FaChartLine className="text-[#00C265] mb-6" size={40} />
-              <h4 className="text-xl font-bold text-[#040f1a] mb-3">Continuous Excellence</h4>
-              <p className="text-gray-500 text-[15px]">The tech world never stops evolving, and neither do we. We constantly upgrade our skills to deliver state-of-the-art solutions.</p>
-            </div>
-            <div className="bg-[#f8f9fa] p-10 rounded-2xl flex flex-col items-center text-center">
-              <FaUsers className="text-[#00C265] mb-6" size={40} />
-              <h4 className="text-xl font-bold text-[#040f1a] mb-3">Client-Centricity</h4>
-              <p className="text-gray-500 text-[15px]">Your success is our success. We partner with our clients, treating their business goals as our own personal milestones.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. The Journey (Timeline) */}
-      <section className="w-full py-24 px-6 sm:px-10 bg-[#040f1a] text-white">
-        <div className="max-w-[1000px] mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-[40px] font-bold">The Journey to WNCoders</h2>
           </div>
           
-          <div className="relative max-w-4xl mx-auto">
-            {/* The vertical line */}
-            <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-800 transform md:-translate-x-1/2"></div>
+          {/* Right Image */}
+          <div className="relative w-full h-[300px] lg:h-[400px] flex justify-center items-center">
+            <Image 
+              src="/AboutHero.png" 
+              alt="WNCoders Merger" 
+              fill
+              className="object-contain"
+              priority
+              unoptimized
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 2. OUR PARTNERSHIP */}
+      <section className="w-full py-20 px-6 sm:px-10 bg-white text-center border-t border-gray-100">
+        <div className="max-w-[1200px] mx-auto">
+          
+          {/* Header */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="text-[#00C265] text-xs flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00C265]"></span>
+              <span className="w-1.5 h-1.5 bg-[#00C265] rotate-45"></span>
+            </span>
+            <span className="text-[#00C265] text-[13px] font-bold tracking-[0.15em] uppercase">
+              OUR PARTNERSHIP
+            </span>
+            <span className="text-[#00C265] text-xs flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-[#00C265] rotate-45"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00C265]"></span>
+            </span>
+          </div>
+          
+          <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold mb-6">
+            Where Technology Meets <span className="text-[#00C265]">Business Growth</span>
+          </h2>
+          <p className="text-gray-600 max-w-[650px] mx-auto mb-12 text-[16px] leading-relaxed">
+            Our partnership is built on a shared belief that technology, <br className="hidden md:block" />
+            creativity, and strategy together create powerful digital experiences.
+          </p>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
             
-            {/* Item 1 */}
-            <div className="relative flex flex-col md:flex-row items-center justify-between mb-20">
-              {/* Left Content (or right on mobile) */}
-              <div className="w-full md:w-[45%] pl-[60px] md:pl-0 md:pr-12 md:text-right">
-                <h4 className="text-2xl font-bold text-[#00C265]">Foundation</h4>
-                <p className="text-gray-400 mt-2">Digicoders Technologies begins its journey, establishing a massive footprint in IT training and software development in India.</p>
+            {/* Card 1 */}
+            <div className="flex flex-col items-center lg:border-r lg:border-gray-300 px-6">
+              <div className="w-24 h-24 rounded-full bg-white border-[1.5px] border-[#00C265]/30 flex items-center justify-center mb-6 text-[#034d28]">
+                <FaUsers size={40} />
               </div>
-              {/* Dot */}
-              <div className="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-[#00C265] rounded-full shadow-[0_0_15px_rgba(0,194,101,0.5)] z-10 top-1 md:top-auto"></div>
-              {/* Right Spacer for md */}
-              <div className="w-full md:w-[45%] hidden md:block"></div>
+              <h4 className="font-bold text-[#040f1a] text-[19px] mb-3">Stronger Together</h4>
+              <p className="text-gray-500 text-[14.5px] leading-relaxed max-w-[220px]">
+                Two expert teams working as one to deliver exceptional results.
+              </p>
             </div>
-
-            {/* Item 2 */}
-            <div className="relative flex flex-col md:flex-row items-center justify-between mb-20">
-              {/* Left Spacer */}
-              <div className="w-full md:w-[45%] hidden md:block"></div>
-              {/* Dot */}
-              <div className="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-[#00C265] rounded-full shadow-[0_0_15px_rgba(0,194,101,0.5)] z-10 top-1 md:top-auto"></div>
-              {/* Right Content */}
-              <div className="w-full md:w-[45%] pl-[60px] md:pl-12 text-left">
-                <h4 className="text-2xl font-bold text-[#00C265]">Modernization</h4>
-                <p className="text-gray-400 mt-2">WorkNest Connect is founded, bringing modern web architectures, cloud-native solutions, and a fresh UI/UX approach to global clients.</p>
+            
+            {/* Card 2 */}
+            <div className="flex flex-col items-center lg:border-r lg:border-gray-300 px-6">
+              <div className="w-24 h-24 rounded-full bg-white border-[1.5px] border-[#00C265]/30 flex items-center justify-center mb-6 text-[#034d28]">
+                <FaRocket size={38} className="-rotate-12" />
               </div>
+              <h4 className="font-bold text-[#040f1a] text-[19px] mb-3">Future Focused</h4>
+              <p className="text-gray-500 text-[14.5px] leading-relaxed max-w-[220px]">
+                Leveraging technology and creativity to build future-ready digital solutions.
+              </p>
             </div>
-
-            {/* Item 3 */}
-            <div className="relative flex flex-col md:flex-row items-center justify-between">
-              {/* Left Content */}
-              <div className="w-full md:w-[45%] pl-[60px] md:pl-0 md:pr-12 md:text-right">
-                <h4 className="text-3xl font-bold text-white mb-2">The Merger</h4>
-                <h4 className="text-xl font-bold text-[#00C265]">Birth of WNCoders</h4>
-                <p className="text-gray-400 mt-2">The two giants merge to form WNCoders. Uniting the deep technical legacy of Digicoders with the agile brilliance of WorkNest Connect.</p>
+            
+            {/* Card 3 */}
+            <div className="flex flex-col items-center lg:border-r lg:border-gray-300 px-6">
+              <div className="w-24 h-24 rounded-full bg-white border-[1.5px] border-[#00C265]/30 flex items-center justify-center mb-6 text-[#034d28]">
+                <FaBullseye size={40} />
               </div>
-              {/* Dot */}
-              <div className="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full border-4 border-[#00C265] shadow-[0_0_20px_rgba(255,255,255,0.5)] z-10 top-1 md:top-auto"></div>
-              {/* Right Spacer */}
-              <div className="w-full md:w-[45%] hidden md:block"></div>
+              <h4 className="font-bold text-[#040f1a] text-[19px] mb-3">Client Success</h4>
+              <p className="text-gray-500 text-[14.5px] leading-relaxed max-w-[220px]">
+                Your success is our priority. We build solutions that drive real business impact.
+              </p>
+            </div>
+            
+            {/* Card 4 */}
+            <div className="flex flex-col items-center px-6">
+              <div className="w-24 h-24 rounded-full bg-white border-[1.5px] border-[#00C265]/30 flex items-center justify-center mb-6 text-[#034d28]">
+                <FaChartLine size={38} />
+              </div>
+              <h4 className="font-bold text-[#040f1a] text-[19px] mb-3">Long Term Value</h4>
+              <p className="text-gray-500 text-[14.5px] leading-relaxed max-w-[220px]">
+                We believe in lasting partnerships and delivering continuous value.
+              </p>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* 8. Our Culture (Grid) */}
-      <section className="w-full py-24 px-6 sm:px-10 bg-[#f8f9fa]">
-        <div className="max-w-[1400px] mx-auto text-center">
-          <div className="mb-16">
-            <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase mb-4 block">Inside WNCoders</span>
-            <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold">Our Workspace & Culture</h2>
+      {/* 3. COMPANY CARDS */}
+      <section className="w-full py-12 px-6 sm:px-10 bg-white">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch relative">
+          
+          {/* Middle X Badge (Visible on large screens) */}
+          <div className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[60px] h-[60px] rounded-full bg-[#040f1a] border border-[#00C265]/50 items-center justify-center">
+            <LuX size={28} className="text-[#00C265]" strokeWidth={1.5} />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
-            <div className="col-span-2 row-span-2 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-500 font-bold border-2 border-dashed border-gray-300 overflow-hidden relative">
-              <span className="relative z-10">Office Image Placeholder 1</span>
-            </div>
-            <div className="bg-gray-200 rounded-2xl flex items-center justify-center text-gray-500 font-bold border-2 border-dashed border-gray-300">Image 2</div>
-            <div className="bg-gray-200 rounded-2xl flex items-center justify-center text-gray-500 font-bold border-2 border-dashed border-gray-300">Image 3</div>
-            <div className="col-span-2 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-500 font-bold border-2 border-dashed border-gray-300">Team Activity Placeholder</div>
-          </div>
-        </div>
-      </section>
 
-      {/* 9. Leadership (Placeholder) */}
-      <section className="w-full py-24 px-6 sm:px-10 bg-white">
-        <div className="max-w-[1400px] mx-auto text-center">
-          <div className="mb-16">
-            <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase mb-4 block">The Visionaries</span>
-            <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold">Meet The Leadership</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1000px] mx-auto">
-            {[1, 2, 3].map((_, i) => (
-              <div key={i} className="group">
-                <div className="w-full aspect-square bg-gray-100 rounded-3xl mb-6 flex items-center justify-center text-gray-400 font-bold border-2 border-dashed border-gray-200 overflow-hidden">
-                  <div className="w-full h-full bg-gray-200 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">Photo</div>
+          {/* DigiCoders Card */}
+          <div className="bg-[#040f1a] rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center md:items-stretch justify-between shadow-xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00C265] rounded-full blur-[100px] opacity-10 pointer-events-none" />
+            
+            <div className="relative z-10 w-full md:w-[50%] flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                {/* Hexagon Logo for DigiCoders */}
+                <div className="w-12 h-12 flex items-center justify-center bg-[#00C265]" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
+                  <div className="w-[44px] h-[44px] flex items-center justify-center bg-[#040f1a]" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
+                    <LuCode size={20} className="text-[#00C265]" strokeWidth={2.5} />
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold text-[#040f1a]">Leader Name</h4>
-                <p className="text-[#00C265] font-semibold mt-1">Founder / Director</p>
+                <div>
+                  <h3 className="text-white text-[28px] font-bold leading-none tracking-tight">Digi<span className="text-[#00C265]">Coders</span></h3>
+                  <span className="text-[15px] font-normal text-white mt-1 block">Technologies</span>
+                </div>
+              </div>
+              <p className="text-gray-300 text-[14px] leading-relaxed max-w-sm mb-6">
+                A technology-driven software development company delivering custom digital solutions.
+              </p>
+              <ul className="space-y-3.5 relative z-10">
+                {[
+                  "Software Development",
+                  "Web & Mobile App Development",
+                  "ERP / CRM Solutions",
+                  "AI, Cloud & Automation",
+                  "API Integration & Maintenance"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white text-[14px] font-medium">
+                    <FaCheckCircle className="text-[#00C265] shrink-0" size={18} /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="relative w-full md:w-[50%] mt-8 md:mt-0 flex justify-end items-center pointer-events-none">
+               <Image 
+                 src="/Digicoderslogo.png" 
+                 alt="DigiCoders Solutions" 
+                 width={600}
+                 height={600}
+                 className="object-contain w-[130%] md:w-[150%] max-w-none md:-mr-16 drop-shadow-2xl"
+                 unoptimized
+               />
+            </div>
+          </div>
+
+          {/* WorkNest Card */}
+          <div className="bg-white border border-gray-100 shadow-[0_15px_50px_rgba(0,0,0,0.06)] rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center md:items-stretch justify-between">
+            <div className="relative z-10 w-full md:w-[50%] flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                {/* Stylized W for WorkNest */}
+                <div className="text-[#00C265] font-black text-[42px] leading-none tracking-tighter w-12 h-12 flex items-center justify-center">
+                  W
+                </div>
+                <div>
+                  <h3 className="text-[#040f1a] text-[28px] font-bold leading-none tracking-tight">WorkNest</h3>
+                  <span className="text-[15px] font-bold text-[#040f1a] mt-1 block">Connect</span>
+                </div>
+              </div>
+              <p className="text-gray-600 text-[14px] leading-relaxed max-w-sm mb-6">
+                A digital growth partner helping brands connect, engage, and grow in the digital era.
+              </p>
+              <ul className="space-y-3.5 relative z-10">
+                {[
+                  "Digital Marketing",
+                  "Graphic Designing",
+                  "Web & App Development",
+                  "IT & AI Solutions",
+                  "Business Consulting"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#040f1a] text-[14px] font-medium">
+                    <FaCheckCircle className="text-[#00C265] shrink-0" size={18} /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="relative w-full md:w-[50%] mt-8 md:mt-0 flex justify-end items-center pointer-events-none">
+               <Image 
+                 src="/image copy 6.png" 
+                 alt="WorkNest Solutions" 
+                 width={600}
+                 height={600}
+                 className="object-contain w-[130%] md:w-[150%] max-w-none md:-mr-16 drop-shadow-xl"
+                 unoptimized
+               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. HOW WE WORK TOGETHER */}
+      <section className="w-full py-24 px-6 sm:px-10 bg-white border-t border-gray-100">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-10 border-t-[1.5px] border-dashed border-[#00C265]/70"></div>
+              <span className="w-1.5 h-1.5 bg-[#00C265] rotate-45"></span>
+              <span className="text-[#00C265] text-[13px] font-bold tracking-[0.15em] uppercase px-1">
+                HOW WE WORK TOGETHER
+              </span>
+              <span className="w-1.5 h-1.5 bg-[#00C265] rotate-45"></span>
+              <div className="w-10 border-t-[1.5px] border-dashed border-[#00C265]/70"></div>
+            </div>
+            <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold mb-4">
+              From Idea to <span className="text-[#00C265]">Impact</span>
+            </h2>
+            <p className="text-gray-500 text-[15px] max-w-lg mx-auto">
+              A streamlined process focused on transparency, collaboration, and results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-4 text-center relative">
+            {[
+              { icon: FaSearch, title: "Discover", desc: "We understand your goals, challenges, and business needs." },
+              { icon: FaBullseye, title: "Strategize", desc: "We create a smart strategy tailored to your business objectives." },
+              { icon: FaPencilAlt, title: "Design", desc: "Our creative team designs engaging and user-friendly experiences." },
+              { icon: FaCode, title: "Develop", desc: "We build robust, scalable and secure solutions using latest technologies." },
+              { icon: FaRocket, title: "Launch", desc: "We deploy with precision and ensure a smooth go-live experience." },
+              { icon: FaChartLine, title: "Grow", desc: "We help you grow with marketing, support and continuous improvement." },
+            ].map((step, i) => (
+              <div key={i} className="flex flex-col items-center relative z-10 group">
+                <div className="w-[84px] h-[84px] rounded-full border-[1.5px] border-[#00C265]/30 bg-white flex items-center justify-center mb-5 text-[#034d28] transition-transform group-hover:scale-105">
+                  <step.icon size={32} />
+                </div>
+                <h4 className="font-bold text-[#040f1a] mb-2 text-[17px]">{step.title}</h4>
+                <p className="text-gray-500 text-[13px] leading-relaxed max-w-[150px] mx-auto">{step.desc}</p>
+                
+                {/* Arrow Connector (hidden on the last item) */}
+                {i < 5 && (
+                  <div className="hidden md:flex absolute top-[42px] left-[calc(50%+45px)] w-[calc(100%-90px)] z-0 items-center justify-center">
+                    <div className="w-full border-t-[2px] border-dashed border-[#00C265] relative">
+                      <div className="absolute -right-[1px] top-1/2 -translate-y-1/2 w-3 h-3 border-t-[2px] border-r-[2px] border-[#00C265] rotate-45"></div>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 10. CTA Section (Reused) */}
-      <CTA />
+      {/* 5. COMPLETE DIGITAL ECOSYSTEM */}
+      <section className="w-full py-24 px-6 sm:px-10 bg-[#040f1a]">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
+          
+          {/* Left Side: 3D Image */}
+          <div className="w-full flex items-center justify-center relative">
+             <Image 
+               src="/image copy 7.png" 
+               alt="Digital Ecosystem" 
+               width={800}
+               height={800}
+               className="object-contain w-[110%] max-w-none md:w-full h-auto drop-shadow-[0_0_30px_rgba(0,194,101,0.15)]"
+               unoptimized
+             />
+          </div>
+
+          {/* Right Side: Text and Grid */}
+          <div className="w-full flex flex-col">
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-[#00C265] text-[13px] font-bold tracking-[0.15em] uppercase">
+                ONE PARTNERSHIP
+              </span>
+              <div className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 bg-[#00C265] rotate-45"></div>
+                <div className="w-1.5 h-1.5 bg-[#00C265] rotate-45"></div>
+              </div>
+            </div>
+            <h2 className="text-white text-3xl md:text-[42px] font-bold mb-2 leading-tight">
+              Complete Digital <span className="text-[#00C265]">Ecosystem.</span>
+            </h2>
+            <p className="text-gray-300 text-[15px] max-w-md mb-2 leading-relaxed">
+              End-to-end digital services to help your business succeed in the modern world.
+            </p>
+
+            {/* Right Grid (Replaced with Image) */}
+            <div className="w-full mt-0 flex items-center justify-start lg:justify-center">
+              <Image 
+                src="/image-removebg-preview (5).png" 
+                alt="Services Grid" 
+                width={800}
+                height={600}
+                className="object-contain w-[90%] md:w-[85%] h-auto drop-shadow-[0_0_15px_rgba(0,194,101,0.15)]"
+                unoptimized
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 6. OUR PARTNERSHIP IN NUMBERS */}
+      <section className="w-full py-12 px-6 sm:px-10 bg-white border-b border-gray-100">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 mb-10">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00C265]"></div>
+            <span className="text-[#00C265] text-xs font-bold tracking-[0.2em] uppercase">
+              OUR PARTNERSHIP IN NUMBERS
+            </span>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00C265]"></div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 divide-x-0 md:divide-x divide-gray-200">
+            {[
+              { val: "1000+", label: "Projects Delivered" },
+              { val: "850+", label: "Happy Clients" },
+              { val: "50+", label: "Skilled Experts" },
+              { val: "10+", label: "Years Experience" },
+              { val: "2", label: "Strong Companies" },
+              { val: "1", label: "Shared Vision" }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-center justify-center">
+                <span className="text-[#00C265] text-3xl font-bold mb-1">{stat.val}</span>
+                <span className="text-[#040f1a] text-xs font-bold uppercase tracking-wider">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. CTA SECTION */}
+      <section className="w-full bg-[#040f1a] relative overflow-hidden py-24 px-6 sm:px-10 border-t border-gray-800">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00C265]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[48%_52%] gap-8 lg:gap-12 items-center">
+          <div>
+            <h2 className="text-white text-4xl md:text-[44px] font-bold mb-6 leading-tight">
+              Let's Build Something<br/>Bigger <span className="text-[#00C265]">Together</span>
+            </h2>
+            <p className="text-gray-400 text-lg mb-10 max-w-md leading-relaxed">
+              Have an idea or project in mind? Let's turn it into a digital success story.
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <button className="px-6 py-3.5 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-[0_5px_20px_rgba(0,194,101,0.2)] flex items-center gap-2 text-[15px]">
+                Start a Project <LuArrowRight size={18} strokeWidth={2.5} />
+              </button>
+              <button className="px-6 py-3.5 bg-transparent border-[1.5px] border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center gap-2 text-[15px]">
+                Talk to Our Team <LuArrowRight size={18} className="text-[#00C265]" strokeWidth={2.5} />
+              </button>
+            </div>
+          </div>
+          <div 
+            className="w-full flex items-center justify-end relative mt-8 lg:mt-0"
+            style={{
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+              maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
+            }}
+          >
+             <Image 
+               src="/image copy 8.png" 
+               alt="Handshake Digital Network" 
+               width={800}
+               height={800}
+               className="object-contain w-full md:w-[125%] max-w-none md:-mr-10 drop-shadow-2xl"
+               unoptimized
+             />
+          </div>
+        </div>
+      </section>
 
     </main>
   );
