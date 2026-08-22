@@ -2,9 +2,49 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { LuX } from 'react-icons/lu';
+import { toast } from 'react-toastify';
 
 export default function CTA() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phoneNumber: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+      
+      const response = await fetch(`${apiUrl}/consultations`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        toast.success("Consultation requested successfully! We'll contact you soon.");
+        setFormData({ fullName: '', phoneNumber: '', message: '' });
+        setIsModalOpen(false);
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting consultation:', error);
+      toast.error('Failed to connect to the server. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -52,21 +92,21 @@ export default function CTA() {
               <h3 className="text-[#040f1a] text-2xl font-bold mb-2">Request Consultation</h3>
               <p className="text-gray-500 text-sm mb-8">Fill out the form below and our team will get back to you shortly.</p>
               
-              <form className="flex flex-col gap-5">
+              <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
-                  <input type="text" placeholder="John Doe" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black" required />
+                  <input name="fullName" value={formData.fullName} onChange={handleChange} type="text" placeholder="John Doe" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black" required />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
-                  <input type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black" required />
+                  <input name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black" required />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Message</label>
-                  <textarea placeholder="Tell us about your project..." rows={4} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black resize-none" required></textarea>
+                  <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your project..." rows={4} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black resize-none" required></textarea>
                 </div>
-                <button type="submit" className="w-full py-4 mt-2 bg-[#00C265] hover:bg-[#00a355] text-white rounded-lg font-bold text-[17px] transition-colors shadow-lg shadow-[#00C265]/20">
-                  Submit Request
+                <button type="submit" disabled={loading} className="w-full py-4 mt-2 bg-[#00C265] hover:bg-[#00a355] text-white rounded-lg font-bold text-[17px] transition-colors shadow-lg shadow-[#00C265]/20 disabled:opacity-70 disabled:cursor-not-allowed">
+                  {loading ? 'Submitting...' : 'Submit Request'}
                 </button>
               </form>
             </div>

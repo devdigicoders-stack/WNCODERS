@@ -9,12 +9,55 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function ContactPage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    toast.success("Thank you! Your message has been sent successfully.");
-    // Optionally reset the form here
-    e.currentTarget.reset();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+      
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phoneNumber: formData.phone || 'Not Provided',
+        subject: formData.subject,
+        message: formData.message
+      };
+
+      const response = await fetch(`${apiUrl}/messages`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        toast.success("Thank you! Your message has been sent successfully.");
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Failed to connect to the server. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#f9fafb]">
       
@@ -158,15 +201,15 @@ export default function ContactPage() {
                   
                   <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <input type="text" placeholder="Your Name" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
-                        <input type="email" placeholder="Your Email" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
+                        <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your Name" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
+                        <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Your Email" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
                      </div>
-                     <input type="tel" placeholder="Phone Number" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
-                     <input type="text" placeholder="Subject" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
-                     <textarea placeholder="Your Message" rows={6} className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors resize-none" required></textarea>
+                     <input name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="Phone Number" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
+                     <input name="subject" value={formData.subject} onChange={handleChange} type="text" placeholder="Subject" className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors" required />
+                     <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your Message" rows={6} className="w-full px-5 py-4 rounded-xl text-sm font-medium text-gray-900 outline-none placeholder-gray-500 bg-gray-50 border border-gray-300 focus:border-[#00C265] focus:bg-white transition-colors resize-none" required></textarea>
                      
-                     <button type="submit" className="bg-[#00C265] hover:bg-[#00a355] text-white py-4 px-8 rounded-xl font-bold text-sm transition-colors shadow-lg shadow-[#00C265]/20 flex items-center justify-center gap-2 w-max mt-2">
-                        <LuSend size={16} /> Send Message
+                     <button type="submit" disabled={loading} className="bg-[#00C265] hover:bg-[#00a355] text-white py-4 px-8 rounded-xl font-bold text-sm transition-colors shadow-lg shadow-[#00C265]/20 flex items-center justify-center gap-2 w-max mt-2 disabled:opacity-70">
+                        <LuSend size={16} /> {loading ? 'Sending...' : 'Send Message'}
                      </button>
                   </form>
                </div>

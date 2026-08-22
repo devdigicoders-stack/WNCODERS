@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LuX } from 'react-icons/lu';
+import { toast } from 'react-toastify';
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -7,7 +8,47 @@ interface DemoModalProps {
 }
 
 export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phoneNumber: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+
   if (!isOpen) return null;
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+      
+      const response = await fetch(`${apiUrl}/consultations`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        toast.success("Consultation requested successfully! We'll contact you soon.");
+        setFormData({ fullName: '', phoneNumber: '', message: '' });
+        onClose();
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting consultation:', error);
+      toast.error('Failed to connect to the server. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
@@ -34,7 +75,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
         {/* Form */}
         <div className="px-8 pb-8">
-          <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
+          <form className="space-y-5" onSubmit={handleSubmit}>
             
             {/* Name */}
             <div>
@@ -43,6 +84,9 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               </label>
               <input 
                 type="text" 
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#00C265] focus:ring-1 focus:ring-[#00C265] transition-colors placeholder:text-gray-400"
                 placeholder="John Doe"
@@ -56,6 +100,9 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               </label>
               <input 
                 type="tel" 
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#00C265] focus:ring-1 focus:ring-[#00C265] transition-colors placeholder:text-gray-400"
                 placeholder="+91 98765 43210"
@@ -69,6 +116,9 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               </label>
               <textarea 
                 rows={4}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#00C265] focus:ring-1 focus:ring-[#00C265] transition-colors resize-none placeholder:text-gray-400"
                 placeholder="Tell us about your project..."
@@ -79,9 +129,10 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
             <div className="pt-2">
               <button 
                 type="submit"
-                className="w-full py-3.5 bg-[#00C265] hover:bg-[#00a355] text-white rounded-lg font-bold text-[16px] transition-colors"
+                disabled={loading}
+                className="w-full py-3.5 bg-[#00C265] hover:bg-[#00a355] text-white rounded-lg font-bold text-[16px] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Submit Request
+                {loading ? 'Submitting...' : 'Submit Request'}
               </button>
             </div>
 

@@ -13,6 +13,7 @@ export default function ContactForm() {
     inquiryType: 'general',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,7 +35,7 @@ export default function ContactForm() {
     return phoneRegex.test(phone) && digits.length >= 7 && digits.length <= 15;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validation
@@ -53,25 +54,60 @@ export default function ContactForm() {
       return;
     }
 
-    // Success
-    toast.success('Your message has been sent successfully! We will get back to you soon.', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    });
+    setLoading(true);
 
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      inquiryType: 'general',
-      message: ''
-    });
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+      
+      const payload = {
+        name: `${formData.firstName.trim()} ${formData.lastName.trim()}`,
+        email: formData.email,
+        phoneNumber: formData.phone || 'Not Provided',
+        subject: formData.inquiryType,
+        message: formData.message
+      };
+
+      const response = await fetch(`${apiUrl}/messages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log("Success! Data saved to backend:", responseData);
+        // Success
+        toast.success('Your message has been sent successfully! We will get back to you soon.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          inquiryType: 'general',
+          message: ''
+        });
+      } else {
+        const errorData = await response.json();
+        console.error("Backend Error:", errorData);
+        toast.error(errorData.error || errorData.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Failed to connect to the server. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -158,9 +194,10 @@ export default function ContactForm() {
 
         <button 
           type="submit"
-          className="mt-2 w-full bg-[#00C265] hover:bg-[#00a355] text-white font-bold text-lg py-4 rounded-xl transition-all shadow-[0_10px_20px_rgba(0,194,101,0.25)] hover:shadow-[0_15px_30px_rgba(0,194,101,0.35)]"
+          disabled={loading}
+          className="mt-2 w-full bg-[#00C265] hover:bg-[#00a355] text-white font-bold text-lg py-4 rounded-xl transition-all shadow-[0_10px_20px_rgba(0,194,101,0.25)] hover:shadow-[0_15px_30px_rgba(0,194,101,0.35)] disabled:opacity-70 disabled:cursor-not-allowed"
         >
-          Send Message
+          {loading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </div>
