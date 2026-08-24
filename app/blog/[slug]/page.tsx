@@ -182,7 +182,7 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
                    <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-[#040f1a] leading-tight mb-6">
                       {post.title}
                    </h1>
-                   <p className="text-gray-500 text-lg leading-relaxed md:pr-10">
+                   <p className="text-gray-500 text-lg leading-relaxed md:pr-10 break-words">
                       {post.excerpt}
                    </p>
                 </div>
@@ -237,9 +237,8 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
                 />
              </div>
 
-             {/* Article Content - Rendered Dynamically as HTML */}
              <div 
-               className="prose prose-lg max-w-none text-gray-600 mb-16"
+               className="prose prose-lg max-w-none text-gray-600 mb-16 break-words prose-a:text-[#00C265] prose-a:no-underline hover:prose-a:underline"
                dangerouslySetInnerHTML={{ __html: post.content }}
              />
 

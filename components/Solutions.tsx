@@ -1,11 +1,15 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   LuUsers, LuUserCog, LuTrendingUp, LuFileText, LuBuilding2, LuMicroscope, 
   LuArrowRight, LuBadgeCheck, LuShieldCheck, LuSettings, LuClock, LuHeadphones 
 } from 'react-icons/lu';
+import DemoModal from './DemoModal';
 
 export default function Solutions() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const solutions = [
     {
       icon: LuUsers,
@@ -96,9 +100,12 @@ export default function Solutions() {
                 </p>
 
                 {/* Link */}
-                <Link href="/contact" className="inline-flex items-center gap-2 text-[#040f1a] group-hover:text-[#00C265] font-bold text-[14px] transition-colors mt-auto relative z-10">
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="inline-flex items-center gap-2 text-[#040f1a] group-hover:text-[#00C265] font-bold text-[14px] transition-colors mt-auto relative z-10"
+                >
                   Book Demo <LuArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </button>
               </div>
             );
           })}
@@ -126,6 +133,7 @@ export default function Solutions() {
         </div>
 
       </div>
+      <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

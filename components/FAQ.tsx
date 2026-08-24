@@ -104,7 +104,7 @@ export default function FAQ() {
               </div>
               <div>
                 <label className="block text-[13px] font-bold text-gray-700 mb-1">Email Address</label>
-                <input type="email" placeholder="john@example.com" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black bg-white text-[15px]" required />
+                <input type="email" placeholder="info@thedigicoders.com" className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black bg-white text-[15px]" required />
               </div>
               <div>
                 <label className="block text-[13px] font-bold text-gray-700 mb-1">Your Question</label>

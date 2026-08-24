@@ -105,7 +105,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#00C265] focus:ring-1 focus:ring-[#00C265] transition-colors placeholder:text-gray-400"
-                placeholder="+91 98765 43210"
+                placeholder="+91 9140967607"
               />
             </div>
 

@@ -99,7 +99,7 @@ export default function CTA() {
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
-                  <input name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black" required />
+                  <input name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} type="tel" placeholder="+91 9140967607" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#00C265] focus:outline-none focus:ring-2 focus:ring-[#00C265]/20 transition-all text-black" required />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Message</label>

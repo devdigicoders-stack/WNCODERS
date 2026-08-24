@@ -30,10 +30,17 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="text-white font-bold mb-6 text-[17px]">Quick Links</h4>
             <ul className="flex flex-col items-center md:items-start gap-4">
-              {['Home', 'About Us', 'Services', 'Blog', 'Careers', 'Contact Us'].map((link, i) => (
+              {[
+                { name: 'Home', href: '/' },
+                { name: 'About Us', href: '/about' },
+                { name: 'Services', href: '/services' },
+                { name: 'Blog', href: '/blog' },
+                { name: 'Our Team', href: '/team' },
+                { name: 'Contact Us', href: '/contact' }
+              ].map((link, i) => (
                 <li key={i}>
-                  <Link href="#" className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
-                    {link}
+                  <Link href={link.href} className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -46,7 +53,7 @@ export default function Footer() {
             <ul className="flex flex-col items-center md:items-start gap-4">
               {['Web Development', 'Mobile App Development', 'UI/UX Design', 'Cloud Solutions', 'IT Consulting'].map((link, i) => (
                 <li key={i}>
-                  <Link href="#" className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
+                  <Link href="/services" className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
                     {link}
                   </Link>
                 </li>
@@ -60,7 +67,7 @@ export default function Footer() {
             <ul className="flex flex-col items-center md:items-start gap-4">
               {['Blog', 'Case Studies', 'Privacy Policy', 'Terms & Conditions', 'Sitemap'].map((link, i) => (
                 <li key={i}>
-                  <Link href="#" className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
+                  <Link href={link === 'Blog' ? '/blog' : '/contact'} className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
                     {link}
                   </Link>
                 </li>
@@ -76,17 +83,27 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-full bg-[#00C265]/10 flex items-center justify-center group-hover:bg-[#00C265] transition-colors shrink-0">
                   <LuPhone className="text-[#00C265] group-hover:text-white transition-colors" size={16} />
                 </div>
-                <a href="tel:+919876543210" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors md:mt-1">
-                  +91 98765 43210
-                </a>
+                <div className="flex flex-col gap-1 md:mt-1">
+                  <a href="tel:+919140967607" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
+                    +91 9140967607
+                  </a>
+                  <a href="tel:+916394296293" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
+                    +91 6394296293
+                  </a>
+                </div>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3 group">
                 <div className="w-8 h-8 rounded-full bg-[#00C265]/10 flex items-center justify-center group-hover:bg-[#00C265] transition-colors shrink-0">
                   <LuMail className="text-[#00C265] group-hover:text-white transition-colors" size={16} />
                 </div>
-                <a href="mailto:info@worknestconnect.com" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors md:mt-1">
-                  info@worknestconnect.com
-                </a>
+                <div className="flex flex-col gap-1 md:mt-1">
+                  <a href="mailto:info@thedigicoders.com" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
+                    info@thedigicoders.com
+                  </a>
+                  <a href="mailto:digicoderstech@gmail.com" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
+                    digicoderstech@gmail.com
+                  </a>
+                </div>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3 group">
                 <div className="w-8 h-8 rounded-full bg-[#00C265]/10 flex items-center justify-center group-hover:bg-[#00C265] transition-colors shrink-0 md:mt-1">

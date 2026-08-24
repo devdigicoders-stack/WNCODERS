@@ -32,3 +32,37 @@ body {
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
+
+/* Google Translate Widget Overrides */
+.skiptranslate iframe {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 30px !important;
+}
+.goog-te-combo {
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  padding: 0px 4px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  width: auto !important;
+  min-width: 80px !important;
+}
+.goog-te-combo option {
+  color: #040f1a !important;
+  background-color: white !important;
+}
+.goog-logo-link {
+  display: none !important;
+}

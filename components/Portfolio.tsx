@@ -1,10 +1,11 @@
 "use client";
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
-
+import DemoModal from './DemoModal';
 export default function Portfolio() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const autoScrollTimer = useRef<NodeJS.Timeout | null>(null);
   const resumeTimer = useRef<NodeJS.Timeout | null>(null);
@@ -92,6 +93,7 @@ export default function Portfolio() {
   ];
 
   return (
+    <>
     <section className="w-full bg-white py-24 px-6 sm:px-10 overflow-hidden relative">
       <div className="max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
         
@@ -137,7 +139,11 @@ export default function Portfolio() {
           className="w-full lg:flex-1 overflow-x-auto pb-8 relative hide-scroll flex gap-6 snap-x snap-mandatory"
         >
           {projects.map((project, index) => (
-            <div key={index} className="w-[280px] md:w-[340px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 shrink-0 flex flex-col group cursor-pointer snap-start">
+            <div 
+              key={index} 
+              onClick={() => setIsModalOpen(true)}
+              className="w-[280px] md:w-[340px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 shrink-0 flex flex-col group cursor-pointer snap-start"
+            >
               
               {/* Image Container */}
               <div className="w-full h-[240px] bg-gray-50 relative overflow-hidden">
@@ -165,5 +171,7 @@ export default function Portfolio() {
 
       </div>
     </section>
+    <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }

@@ -149,7 +149,7 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="john@example.com" 
+              placeholder="info@thedigicoders.com" 
               className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-[#00C265] focus:ring-2 focus:ring-[#00C265]/20 transition-all text-gray-800 placeholder-gray-400"
             />
           </div>
@@ -160,7 +160,7 @@ export default function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+1 (555) 000-0000" 
+              placeholder="+91 9140967607" 
               className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-[#00C265] focus:ring-2 focus:ring-[#00C265]/20 transition-all text-gray-800 placeholder-gray-400"
             />
           </div>

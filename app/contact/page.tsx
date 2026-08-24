@@ -153,8 +153,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                      <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Call Us</h4>
-                     <p className="text-gray-500 text-sm leading-relaxed">
-                        +1 (555) 123-4567<br/>+1 (555) 987-6543
+                     <p className="text-gray-500 text-sm leading-relaxed flex flex-col gap-1">
+                        <a href="tel:+919140967607" className="hover:text-[#00C265] transition-colors">+91 9140967607</a>
+                        <a href="tel:+916394296293" className="hover:text-[#00C265] transition-colors">+91 6394296293</a>
                      </p>
                   </div>
                </div>
@@ -166,8 +167,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                      <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Email Us</h4>
-                     <p className="text-gray-500 text-sm leading-relaxed">
-                        info@softwarecompany.com<br/>support@softwarecompany.com
+                     <p className="text-gray-500 text-sm leading-relaxed flex flex-col gap-1">
+                        <a href="mailto:info@thedigicoders.com" className="hover:text-[#00C265] transition-colors">info@thedigicoders.com</a>
+                        <a href="mailto:digicoderstech@gmail.com" className="hover:text-[#00C265] transition-colors">digicoderstech@gmail.com</a>
                      </p>
                   </div>
                </div>
@@ -280,7 +282,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Sales & Partnerships</h3>
                   <p className="text-gray-500 text-sm mb-4">Interested in our services? Let's talk about how we can help your business grow.</p>
-                  <a href="mailto:sales@softwarecompany.com" className="text-[#00C265] font-bold hover:underline">sales@softwarecompany.com</a>
+                  <a href="mailto:info@thedigicoders.com" className="text-[#00C265] font-bold hover:underline">info@thedigicoders.com</a>
                </div>
 
                {/* Support */}
@@ -290,7 +292,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Technical Support</h3>
                   <p className="text-gray-500 text-sm mb-4">Already a customer? Our dedicated support team is here to help you 24/7.</p>
-                  <a href="mailto:support@softwarecompany.com" className="text-[#00C265] font-bold hover:underline">support@softwarecompany.com</a>
+                  <a href="mailto:digicoderstech@gmail.com" className="text-[#00C265] font-bold hover:underline">digicoderstech@gmail.com</a>
                </div>
 
                {/* Press */}
@@ -300,7 +302,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Press & Media</h3>
                   <p className="text-gray-500 text-sm mb-4">For media inquiries, interviews, or press resources, please contact our PR team.</p>
-                  <a href="mailto:press@softwarecompany.com" className="text-[#00C265] font-bold hover:underline">press@softwarecompany.com</a>
+                  <a href="mailto:info@thedigicoders.com" className="text-[#00C265] font-bold hover:underline">info@thedigicoders.com</a>
                </div>
             </div>
          </div>

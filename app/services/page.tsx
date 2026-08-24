@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowRight, LuCheck, LuUsers, LuCode } from 'react-icons/lu';
+import { LuArrowRight, LuCheck, LuUsers, LuCode, LuSmartphone, LuCloud, LuPenTool, LuMegaphone, LuServer, LuDatabase } from 'react-icons/lu';
 import DemoButton from '../../components/DemoButton';
 import Solutions from '../../components/Solutions';
+import Services from '../../components/Services';
 import Portfolio from '../../components/Portfolio';
 
 export const metadata: Metadata = {
@@ -103,6 +104,56 @@ export default function ServicesPage() {
       </section>
 
       <Solutions />
+      {/* Comprehensive IT Services Section */}
+      <section className="bg-white py-20 px-6 sm:px-10" id="services-list">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[#00C265] text-sm font-bold tracking-[0.15em] uppercase mb-3 block">
+              WHAT WE DO
+            </span>
+            <h2 className="text-[#040f1a] text-3xl sm:text-4xl lg:text-[40px] font-bold leading-tight mb-6">
+              Comprehensive IT <span className="text-[#00C265]">Services</span>
+            </h2>
+            <p className="text-gray-500 text-[16px] sm:text-[18px]">
+              We provide end-to-end technology solutions to help your business innovate, automate, and dominate the digital landscape.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { title: 'Web Application Development', desc: 'Custom, scalable, and secure web applications tailored to your unique business needs.', icon: LuCode, features: ['React & Next.js', 'Node.js Backend', 'E-commerce Solutions', 'Custom Dashboards'] },
+              { title: 'Mobile App Development', desc: 'High-performance native and cross-platform mobile apps for iOS and Android.', icon: LuSmartphone, features: ['React Native', 'Flutter', 'UI/UX Excellence', 'App Store Optimization'] },
+              { title: 'Cloud & DevOps Solutions', desc: 'Modernize your infrastructure with secure cloud hosting and automated CI/CD pipelines.', icon: LuCloud, features: ['AWS & Azure', 'Docker & Kubernetes', 'Serverless Architecture', '24/7 Monitoring'] },
+              { title: 'UI/UX Design', desc: 'Stunning and intuitive interfaces that maximize user engagement and retention.', icon: LuPenTool, features: ['Wireframing & Prototyping', 'User Research', 'Interactive Design', 'Brand Identity'] },
+              { title: 'Digital Marketing & SEO', desc: 'Data-driven marketing strategies to increase visibility and drive organic traffic.', icon: LuMegaphone, features: ['Search Engine Optimization', 'Social Media Marketing', 'PPC Campaigns', 'Content Strategy'] },
+              { title: 'Database & API Integration', desc: 'Robust data management and seamless integration with third-party platforms.', icon: LuDatabase, features: ['SQL & NoSQL', 'REST & GraphQL APIs', 'Data Migration', 'System Integration'] },
+            ].map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div key={index} className="bg-white rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:border-[#00C265] hover:shadow-[0_8px_30px_rgba(0,194,101,0.1)] transition-all duration-300 group">
+                  <div className="w-14 h-14 rounded-full bg-[#00C265]/10 flex items-center justify-center text-[#00C265] mb-6 group-hover:scale-110 group-hover:bg-[#00C265] group-hover:text-white transition-all duration-300">
+                    <Icon size={28} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-[#040f1a] text-xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-gray-500 text-[15px] leading-relaxed mb-6">
+                    {service.desc}
+                  </p>
+                  <ul className="space-y-2 mb-8">
+                    {service.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-center gap-2 text-[14px] text-gray-600 font-medium">
+                        <LuCheck size={16} className="text-[#00C265]" /> {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/contact" className="text-[#00C265] font-bold text-[15px] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More <LuArrowRight size={18} />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
       <Portfolio />
       
     </main>

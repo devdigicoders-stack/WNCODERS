@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   LuUsers, LuAward, LuRocket, LuHeart, 
-  LuLinkedin, LuTwitter, LuMail, 
+  LuLinkedin, LuTwitter, LuMail, LuPhone, 
   LuArrowRight 
 } from 'react-icons/lu';
 import CTA from '@/components/CTA';
@@ -103,13 +103,13 @@ export default function TeamPage() {
                 <p className="text-[#00C265] font-bold text-[13px] mb-4">Chief Executive Officer</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">Visionary leader with 12+ years of experience in driving innovation and business growth.</p>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="tel:6394296293" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                    <LuPhone size={14} />
+                  </a>
+                  <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuLinkedin size={14} />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                    <LuTwitter size={14} />
-                  </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="mailto:digicoderstech@gmail.com" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuMail size={14} />
                   </a>
                 </div>
@@ -126,13 +126,13 @@ export default function TeamPage() {
                 <p className="text-[#00C265] font-bold text-[13px] mb-4">Chief Operating Officer</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">Expert in operational excellence and building scalable processes that deliver results.</p>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="tel:6394296293" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                    <LuPhone size={14} />
+                  </a>
+                  <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuLinkedin size={14} />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                    <LuTwitter size={14} />
-                  </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="mailto:digicoderstech@gmail.com" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuMail size={14} />
                   </a>
                 </div>
@@ -149,13 +149,13 @@ export default function TeamPage() {
                 <p className="text-[#00C265] font-bold text-[13px] mb-4">Chief Technology Officer</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">Technology enthusiast leading our tech strategy and delivering cutting-edge solutions.</p>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="tel:6394296293" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                    <LuPhone size={14} />
+                  </a>
+                  <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuLinkedin size={14} />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                    <LuTwitter size={14} />
-                  </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="mailto:digicoderstech@gmail.com" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuMail size={14} />
                   </a>
                 </div>
@@ -172,13 +172,13 @@ export default function TeamPage() {
                 <p className="text-[#00C265] font-bold text-[13px] mb-4">Head of Business Development</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">Building strong partnerships and identifying new opportunities for sustainable growth.</p>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="tel:6394296293" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                    <LuPhone size={14} />
+                  </a>
+                  <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuLinkedin size={14} />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                    <LuTwitter size={14} />
-                  </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                  <a href="mailto:digicoderstech@gmail.com" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                     <LuMail size={14} />
                   </a>
                 </div>
@@ -222,13 +222,13 @@ export default function TeamPage() {
                   <h3 className="text-lg font-bold text-[#040f1a] mb-1">David Miller</h3>
                   <p className="text-[#00C265] font-bold text-[11px] mb-4 uppercase tracking-wider">Full Stack Developer</p>
                   <div className="flex items-center justify-center gap-2">
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="tel:6394296293" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                       <LuPhone size={12} />
+                     </a>
+                     <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuLinkedin size={12} />
                      </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                       <LuTwitter size={12} />
-                     </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="mailto:digicoderstech@gmail.com" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuMail size={12} />
                      </a>
                   </div>
@@ -244,13 +244,13 @@ export default function TeamPage() {
                   <h3 className="text-lg font-bold text-[#040f1a] mb-1">Jessica Lee</h3>
                   <p className="text-[#00C265] font-bold text-[11px] mb-4 uppercase tracking-wider">UI/UX Designer</p>
                   <div className="flex items-center justify-center gap-2">
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="tel:6394296293" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                       <LuPhone size={12} />
+                     </a>
+                     <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuLinkedin size={12} />
                      </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                       <LuTwitter size={12} />
-                     </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="mailto:digicoderstech@gmail.com" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuMail size={12} />
                      </a>
                   </div>
@@ -266,13 +266,13 @@ export default function TeamPage() {
                   <h3 className="text-lg font-bold text-[#040f1a] mb-1">Daniel Wilson</h3>
                   <p className="text-[#00C265] font-bold text-[11px] mb-4 uppercase tracking-wider">Backend Developer</p>
                   <div className="flex items-center justify-center gap-2">
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="tel:6394296293" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                       <LuPhone size={12} />
+                     </a>
+                     <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuLinkedin size={12} />
                      </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                       <LuTwitter size={12} />
-                     </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="mailto:digicoderstech@gmail.com" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuMail size={12} />
                      </a>
                   </div>
@@ -288,13 +288,13 @@ export default function TeamPage() {
                   <h3 className="text-lg font-bold text-[#040f1a] mb-1">Sophia Martinez</h3>
                   <p className="text-[#00C265] font-bold text-[11px] mb-4 uppercase tracking-wider">Frontend Developer</p>
                   <div className="flex items-center justify-center gap-2">
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="tel:6394296293" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                       <LuPhone size={12} />
+                     </a>
+                     <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuLinkedin size={12} />
                      </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                       <LuTwitter size={12} />
-                     </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="mailto:digicoderstech@gmail.com" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuMail size={12} />
                      </a>
                   </div>
@@ -310,13 +310,13 @@ export default function TeamPage() {
                   <h3 className="text-lg font-bold text-[#040f1a] mb-1">James Anderson</h3>
                   <p className="text-[#00C265] font-bold text-[11px] mb-4 uppercase tracking-wider">DevOps Engineer</p>
                   <div className="flex items-center justify-center gap-2">
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="tel:6394296293" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                       <LuPhone size={12} />
+                     </a>
+                     <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuLinkedin size={12} />
                      </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                       <LuTwitter size={12} />
-                     </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="mailto:digicoderstech@gmail.com" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuMail size={12} />
                      </a>
                   </div>
@@ -332,13 +332,13 @@ export default function TeamPage() {
                   <h3 className="text-lg font-bold text-[#040f1a] mb-1">Olivia Taylor</h3>
                   <p className="text-[#00C265] font-bold text-[11px] mb-4 uppercase tracking-wider">Project Manager</p>
                   <div className="flex items-center justify-center gap-2">
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="tel:6394296293" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                       <LuPhone size={12} />
+                     </a>
+                     <a href="https://in.linkedin.com/in/programmerkashyap" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuLinkedin size={12} />
                      </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
-                       <LuTwitter size={12} />
-                     </a>
-                     <a href="#" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                     <a href="mailto:digicoderstech@gmail.com" className="w-7 h-7 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                        <LuMail size={12} />
                      </a>
                   </div>

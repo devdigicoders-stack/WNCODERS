@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   LuCode, 
@@ -9,6 +10,8 @@ import {
   LuMegaphone,
   LuArrowRight
 } from 'react-icons/lu';
+import DemoModal from './DemoModal';
+
 
 const services = [
   {
@@ -44,8 +47,11 @@ const services = [
 ];
 
 export default function Services() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section className="w-full bg-[#f8f9fa] py-20 px-6 sm:px-10">
+    <>
+      <section className="w-full bg-[#f8f9fa] py-20 px-6 sm:px-10">
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -69,6 +75,7 @@ export default function Services() {
             return (
               <div 
                 key={index} 
+                onClick={() => setIsModalOpen(true)}
                 className="bg-white rounded-[16px] p-4 shadow-md hover:shadow-lg hover:-translate-y-1 border-[1.5px] border-gray-100 hover:border-[#00C265] transition-all duration-300 group flex flex-col h-full cursor-pointer relative"
               >
                 <div className="text-[#00C265] mb-2.5">
@@ -89,5 +96,7 @@ export default function Services() {
         </div>
       </div>
     </section>
+    <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }

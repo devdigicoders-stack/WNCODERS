@@ -1,5 +1,7 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { 
   LuArrowRight, LuUsers, LuRocket, LuTarget, LuChartBar, 
   LuLaptop, LuLayoutTemplate, LuSmartphone, LuMegaphone, LuBot, 
@@ -8,7 +10,11 @@ import {
   LuUpload, LuTrendingUp 
 } from 'react-icons/lu';
 import { FaUsers, FaRocket, FaBullseye, FaChartLine, FaCheckCircle, FaSearch, FaPencilAlt, FaCode } from 'react-icons/fa';
+import DemoModal from '../../components/DemoModal';
+
 export default function AboutPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="w-full flex flex-col items-center justify-center min-h-screen bg-white">
       
@@ -35,12 +41,15 @@ export default function AboutPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <button className="w-full sm:w-auto px-6 py-3 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-lg shadow-[#00C265]/20 flex items-center justify-center gap-2">
+              <button 
+                onClick={() => document.getElementById('partnership-cards')?.scrollIntoView({ behavior: 'smooth' })} 
+                className="w-full sm:w-auto px-6 py-3 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-lg shadow-[#00C265]/20 flex items-center justify-center gap-2"
+              >
                 Explore Partnership <LuArrowRight size={18} />
               </button>
-              <button className="w-full sm:w-auto px-6 py-3 bg-transparent border-2 border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+              <Link href="/contact" className="w-full sm:w-auto px-6 py-3 bg-transparent border-2 border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
                 Start a Project <LuArrowRight size={18} className="text-[#00C265]" />
-              </button>
+              </Link>
             </div>
           </div>
           
@@ -137,13 +146,10 @@ export default function AboutPage() {
       </section>
 
       {/* 3. COMPANY CARDS */}
-      <section className="w-full py-12 px-6 sm:px-10 bg-white">
+      <section id="partnership-cards" className="w-full py-12 px-6 sm:px-10 bg-white">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch relative">
           
-          {/* Middle X Badge (Visible on large screens) */}
-          <div className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[60px] h-[60px] rounded-full bg-[#040f1a] border border-[#00C265]/50 items-center justify-center">
-            <LuX size={28} className="text-[#00C265]" strokeWidth={1.5} />
-          </div>
+
 
           {/* DigiCoders Card */}
           <div className="bg-[#040f1a] rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center md:items-stretch justify-between shadow-xl">
@@ -380,10 +386,13 @@ export default function AboutPage() {
               Have an idea or project in mind? Let's turn it into a digital success story.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <button className="px-6 py-3.5 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-[0_5px_20px_rgba(0,194,101,0.2)] flex items-center gap-2 text-[15px]">
+              <Link href="/contact" className="px-6 py-3.5 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-[0_5px_20px_rgba(0,194,101,0.2)] flex items-center gap-2 text-[15px]">
                 Start a Project <LuArrowRight size={18} strokeWidth={2.5} />
-              </button>
-              <button className="px-6 py-3.5 bg-transparent border-[1.5px] border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center gap-2 text-[15px]">
+              </Link>
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="px-6 py-3.5 bg-transparent border-[1.5px] border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center gap-2 text-[15px]"
+              >
                 Talk to Our Team <LuArrowRight size={18} className="text-[#00C265]" strokeWidth={2.5} />
               </button>
             </div>
@@ -407,6 +416,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 }
