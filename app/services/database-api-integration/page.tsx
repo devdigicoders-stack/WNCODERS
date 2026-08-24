@@ -3,107 +3,98 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
-  LuPenTool,
+  LuDatabase, 
+  LuGlobe, 
+  LuShieldCheck, 
+  LuZap, 
+  LuNetwork,
   LuCode,
-  LuSettings,
   LuMessageSquare,
   LuClipboardPen,
+  LuAppWindow,
   LuTestTube,
   LuRocket,
   LuArrowRight,
   LuMessageCircle,
-  LuBlocks
+  LuLink
 } from 'react-icons/lu';
 import { 
-  SiSwift,
-  SiKotlin,
-  SiFlutter,
-  SiReact,
+  SiMysql,
+  SiPostgresql, 
+  SiMongodb,
+  SiRedis,
+  SiDocker,
+  SiGraphql,
+  SiApollographql,
   SiFirebase,
   SiNodedotjs,
-  SiMongodb,
-  SiMysql,
-  SiAndroid,
-  SiApple
+  SiPython,
+  SiGo
 } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 import DemoModal from '../../../components/DemoModal';
 
-export default function AppDevelopment() {
+export default function DatabaseApiIntegration() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const offerings = [
     {
-      title: 'iOS App Development',
-      desc: 'High-performance iOS apps built with the latest technologies.',
-      icon: <SiApple size={32} />
+      title: 'Database Design & Optimization',
+      desc: 'We design scalable relational and NoSQL databases optimized for performance and security.',
+      icon: <LuDatabase size={32} />
     },
     {
-      title: 'Android App Development',
-      desc: 'Scalable and secure Android apps for a wide range of devices.',
-      icon: <SiAndroid size={32} />
-    },
-    {
-      title: 'Cross-Platform Apps',
-      desc: 'Cost-effective cross-platform apps using Flutter for iOS and Android.',
-      icon: <LuBlocks size={32} />
-    },
-    {
-      title: 'UI/UX Design',
-      desc: 'Beautiful, intuitive, and engaging designs that users love.',
-      icon: <LuPenTool size={32} />
-    },
-    {
-      title: 'App Integration',
-      desc: 'Integrate third-party APIs and services to enhance functionality.',
+      title: 'Custom API Development',
+      desc: 'Building robust RESTful and GraphQL APIs to power your applications and services.',
       icon: <LuCode size={32} />
     },
     {
-      title: 'Maintenance & Support',
-      desc: 'Ongoing support and maintenance to keep your app up-to-date.',
-      icon: <LuSettings size={32} />
+      title: 'Third-Party Integration',
+      desc: 'Seamlessly connect your systems with external services like payment gateways, CRMs, and more.',
+      icon: <LuLink size={32} />
+    },
+    {
+      title: 'Data Migration & Sync',
+      desc: 'Securely migrate data across platforms and ensure real-time synchronization.',
+      icon: <LuNetwork size={32} />
+    },
+    {
+      title: 'High Availability Setup',
+      desc: 'Configuring database replication, clustering, and failover for zero downtime.',
+      icon: <LuZap size={32} />
+    },
+    {
+      title: 'Security & Compliance',
+      desc: 'Implementing encryption, access controls, and compliance for your sensitive data.',
+      icon: <LuShieldCheck size={32} />
     }
   ];
 
   const processSteps = [
-    { num: 1, title: 'Requirement Analysis', desc: 'We understand your business goals and gather all the requirements.', icon: <LuMessageSquare size={32} /> },
-    { num: 2, title: 'Planning & Strategy', desc: 'We define the app features, tech stack, timeline, and project roadmap.', icon: <LuClipboardPen size={32} /> },
-    { num: 3, title: 'UI/UX Design', desc: 'We create wireframes and UI/UX designs that deliver great experience.', icon: <LuPenTool size={32} /> },
-    { num: 4, title: 'Development', desc: 'Our developers build robust, scalable, and high-quality apps.', icon: <LuCode size={32} /> },
-    { num: 5, title: 'Testing & Quality Assurance', desc: "We test the app thoroughly to ensure it's bug-free and performs well.", icon: <LuTestTube size={32} /> },
-    { num: 6, title: 'Deployment & Support', desc: 'We deploy the app to stores and provide continuous support.', icon: <LuRocket size={32} /> }
+    { num: 1, title: 'Requirement Analysis', desc: 'We understand your data needs and integration workflows.', icon: <LuMessageSquare size={32} /> },
+    { num: 2, title: 'Architecture Design', desc: 'Designing database schemas and API endpoints mapping.', icon: <LuClipboardPen size={32} /> },
+    { num: 3, title: 'Development', desc: 'Building the database structures and coding secure APIs.', icon: <LuCode size={32} /> },
+    { num: 4, title: 'Integration', desc: 'Connecting endpoints and syncing data across platforms.', icon: <LuNetwork size={32} /> },
+    { num: 5, title: 'Testing & QA', desc: 'Rigorous load testing and security validation.', icon: <LuTestTube size={32} /> },
+    { num: 6, title: 'Deployment', desc: 'Smooth deployment to production and continuous monitoring.', icon: <LuRocket size={32} /> }
   ];
 
   const technologies = [
-    { name: 'Swift', icon: <SiSwift size={45} className="text-[#FA7343]" /> },
-    { name: 'Kotlin', icon: <SiKotlin size={45} className="text-[#7F52FF]" /> },
-    { name: 'Flutter', icon: <SiFlutter size={45} className="text-[#02569B]" /> },
-    { name: 'React Native', icon: <SiReact size={45} className="text-[#61DAFB]" /> },
-    { name: 'Firebase', icon: <SiFirebase size={45} className="text-[#FFCA28]" /> },
     { name: 'Node.js', icon: <SiNodedotjs size={45} className="text-[#339933]" /> },
+    { name: 'Python', icon: <SiPython size={45} className="text-[#3776AB]" /> },
+    { name: 'Go', icon: <SiGo size={45} className="text-[#00ADD8]" /> },
+    { name: 'MySQL', icon: <SiMysql size={45} className="text-[#4479A1]" /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql size={45} className="text-[#4169E1]" /> },
     { name: 'MongoDB', icon: <SiMongodb size={45} className="text-[#47A248]" /> },
-    { name: 'MySQL', icon: <SiMysql size={45} className="text-[#4479A1]" /> }
+    { name: 'Redis', icon: <SiRedis size={45} className="text-[#DC382D]" /> },
+    { name: 'GraphQL', icon: <SiGraphql size={45} className="text-[#E10098]" /> },
+    { name: 'Apollo', icon: <SiApollographql size={45} className="text-[#311C87]" /> },
+    { name: 'AWS', icon: <FaAws size={45} className="text-[#FF9900]" /> },
+    { name: 'Firebase', icon: <SiFirebase size={45} className="text-[#FFCA28]" /> },
+    { name: 'Docker', icon: <SiDocker size={45} className="text-[#2496ED]" /> },
   ];
 
-  const [projects, setProjects] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/projects');
-        if (response.ok) {
-          const data = await response.json();
-          const appDevProjects = data.filter((p: any) => p.category === 'App Development').slice(0, 4);
-          setProjects(appDevProjects);
-        }
-      } catch (error) {
-        console.error('Failed to fetch projects:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchProjects();
-  }, []);
 
   return (
     <div className="w-full bg-[#f8fafc] font-sans overflow-x-hidden">
@@ -134,32 +125,31 @@ export default function AppDevelopment() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight">
-              App Development That <br className="hidden lg:block" />
-              <span className="text-[#00C265]">Drives Results</span>
+              Database & API <span className="text-[#00C265]">Integration</span>
             </h1>
             
             <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-              We build feature-rich, high-performance mobile applications that deliver seamless user experiences and help your business grow in the digital world.
+              Seamlessly connect systems, sync data in real-time, and build robust databases that scale with your digital ecosystem.
             </p>
             
             <div className="flex flex-wrap items-center gap-4">
               <button onClick={() => setIsModalOpen(true)} className="bg-[#00C265] hover:bg-[#00a857] text-white px-8 py-3 rounded text-sm font-bold transition-colors flex items-center shadow-lg shadow-[#00C265]/20">
                 Get In Touch <LuArrowRight className="ml-2" />
               </button>
-              <button onClick={() => setIsModalOpen(true)} className="border border-gray-700 hover:border-[#00C265] text-white px-8 py-3 rounded text-sm font-bold transition-colors flex items-center group">
-                View Our Work <LuArrowRight className="ml-2 text-gray-400 group-hover:text-[#00C265] transition-colors" />
-              </button>
+              <Link href="/contact" className="border border-gray-700 hover:border-[#00C265] text-white px-8 py-3 rounded text-sm font-bold transition-colors flex items-center group">
+                View Our Projects <LuArrowRight className="ml-2 text-gray-400 group-hover:text-[#00C265] transition-colors" />
+              </Link>
             </div>
           </div>
 
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative mt-8 lg:mt-0">
              {/* Image Graphic on Right */}
-             <div className="relative w-full max-w-[550px] lg:-mr-8 aspect-[4/3] lg:aspect-auto lg:h-[480px] flex items-center justify-center">
+             <div className="relative w-full max-w-[450px] aspect-[1/1] flex items-center justify-center">
                 <Image 
-                  src="/image copy 12.png" 
-                  alt="App Development Graphic" 
+                  src="/database_api_graphic.jpg" 
+                  alt="Database & API Integration Graphic" 
                   fill
-                  className="object-contain drop-shadow-[0_20px_50px_rgba(0,194,101,0.2)]"
+                  className="object-cover rounded-2xl shadow-[0_0_50px_rgba(0,194,101,0.2)] opacity-95 animate-[pulse_10s_ease-in-out_infinite]"
                   priority
                 />
              </div>
@@ -179,7 +169,7 @@ export default function AppDevelopment() {
               What We Offer
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Custom <span className="text-[#00C265]">App Solutions</span> for Your Business
+              Robust <span className="text-[#00C265]">Data Solutions</span> for Your Business
             </h2>
           </div>
 
@@ -206,7 +196,7 @@ export default function AppDevelopment() {
               Our Process
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Our App <span className="text-[#00C265]">Development</span> Process
+              Our <span className="text-[#00C265]">Integration</span> Process
             </h2>
           </div>
 
@@ -261,7 +251,7 @@ export default function AppDevelopment() {
             Technologies We Use
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Modern <span className="text-[#00C265]">Technologies</span> for Powerful Apps
+            Modern <span className="text-[#00C265]">Tech Stack</span>
           </h2>
         </div>
 
@@ -272,7 +262,6 @@ export default function AppDevelopment() {
           <div className="absolute top-0 bottom-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
           
           <div className="animate-marquee py-4 gap-6 px-3">
-            {/* We duplicate the array to create a seamless scrolling loop */}
             {[...technologies, ...technologies].map((tech, idx) => (
               <div key={idx} className="bg-white shrink-0 rounded-2xl w-40 h-40 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-lg flex flex-col items-center justify-center gap-4 group transition-all duration-300">
                 <div className="transform group-hover:scale-110 transition-transform duration-300">
@@ -285,52 +274,6 @@ export default function AppDevelopment() {
         </div>
       </section>
 
-      {/* 5. RECENT PROJECTS */}
-      <section className="py-24 px-6 sm:px-10 bg-white border-t border-gray-100">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
-            <div>
-              <div className="inline-flex items-center text-[#00C265] text-xs font-bold tracking-wider mb-4 uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00C265] mr-2"></span>
-                Our Work
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Some of Our <span className="text-[#00C265]">Recent Projects</span>
-              </h2>
-            </div>
-            <Link href="/contact" className="bg-[#040f1a] hover:bg-gray-900 text-white px-6 py-3 rounded text-sm font-bold transition-colors flex items-center shadow-lg">
-              View All Projects <LuArrowRight className="ml-2 text-[#00C265]" />
-            </Link>
-          </div>
-
-          {isLoading ? (
-            <div className="text-center text-gray-500 py-10 text-lg">Loading projects...</div>
-          ) : projects.length === 0 ? (
-            <div className="text-center text-gray-500 py-10 text-lg">No recent app development projects found.</div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {projects.map((project, idx) => (
-                <div key={idx} className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group flex flex-col">
-                  <div className="w-full aspect-[4/3] bg-gray-200 relative overflow-hidden">
-                    <img 
-                      src={project.imageUrl || '/image copy 6.png'} 
-                      alt={project.title}
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-6 flex-grow flex flex-col items-start">
-                    <span className="bg-[#00C265]/10 text-[#00C265] text-xs font-bold px-3 py-1 rounded-full mb-4">
-                      {project.category || 'App Development'}
-                    </span>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{project.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* 6. CTA SECTION */}
       <section className="py-24 px-6 sm:px-10">
@@ -346,9 +289,9 @@ export default function AppDevelopment() {
               </div>
               
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Have an App Idea?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need Data Solutions?</h2>
                 <p className="text-gray-400 text-base md:text-lg max-w-2xl">
-                  Let's turn your idea into a powerful mobile application. We're here to help you every step of the way.
+                  Connect with us to design robust databases and build seamless integrations that empower your business.
                 </p>
               </div>
             </div>

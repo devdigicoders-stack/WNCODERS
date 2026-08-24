@@ -41,14 +41,16 @@ const services = [
     href: '/services/ui-ux-design',
   },
   {
-    title: 'IT Consulting',
-    description: 'Expert guidance to optimize your tech strategy and operations.',
-    icon: LuUsers,
+    title: 'Database & API Integration',
+    description: 'Seamless data exchange and robust database architecture.',
+    icon: LuCode,
+    href: '/services/database-api-integration',
   },
   {
-    title: 'Digital Marketing',
-    description: 'Data-driven marketing strategies to grow your brand and reach.',
+    title: 'Digital Marketing & SEO',
+    description: 'Data-driven marketing to increase visibility and growth.',
     icon: LuMegaphone,
+    href: '/services/digital-marketing',
   },
 ];
 

@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import ToastProvider from "../components/ToastProvider";
 import ScrollToTop from "../components/ScrollToTop";
 import PageTransitionLoader from "../components/PageTransitionLoader";
+import SocialSidebar from "../components/SocialSidebar";
+import AnnouncementBar from "../components/AnnouncementBar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,7 +36,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <PageTransitionLoader />
         </Suspense>
         <ToastProvider />
+        <AnnouncementBar />
         <Navbar />
+        <SocialSidebar />
         {children}
         <Footer />
         <ScrollToTop />

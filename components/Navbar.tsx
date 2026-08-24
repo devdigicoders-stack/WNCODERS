@@ -89,10 +89,27 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Center Links */}
-          <div className="hidden lg:flex gap-2 text-[15px] font-semibold">
+          <div className="hidden lg:flex gap-2 text-[15px] font-semibold items-center">
             <NavLink href="/" label="Home" currentPath={pathname} />
             <NavLink href="/about" label="About Us" currentPath={pathname} />
             <NavLink href="/services" label="Services" currentPath={pathname} />
+            
+            {/* Portfolio Dropdown */}
+            <div className="relative group flex items-center h-full py-2">
+              <button className={`relative px-4 py-2 rounded-lg font-semibold text-[15px] transition-all duration-300 flex items-center gap-1 ${pathname.startsWith('/portfolio') ? 'text-[#00C265] bg-[#00C265]/10' : 'text-gray-200 hover:text-[#00C265] hover:bg-[#00C265]/10'}`}>
+                Portfolio
+                <span className={`absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-[#00C265] transition-all duration-300 ${pathname.startsWith('/portfolio') ? 'w-[50%]' : 'w-0 group-hover:w-[50%]'}`}></span>
+              </button>
+              <div className="absolute top-full left-0 mt-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <Link href="/portfolio/clients" className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#00C265]/10 hover:text-[#00C265] font-semibold transition-colors">
+                  Our Clients
+                </Link>
+                <Link href="/portfolio/projects" className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#00C265]/10 hover:text-[#00C265] font-semibold transition-colors border-t border-gray-100">
+                  Our Projects
+                </Link>
+              </div>
+            </div>
+
             <NavLink href="/blog" label="Blog" currentPath={pathname} />
             <NavLink href="/team" label="Our Team" currentPath={pathname} />
 
@@ -178,6 +195,13 @@ export default function Navbar() {
           <NavLink href="/" label="Home" currentPath={pathname} onClick={closeMobileMenu} />
           <NavLink href="/about" label="About Us" currentPath={pathname} onClick={closeMobileMenu} />
           <NavLink href="/services" label="Services" currentPath={pathname} onClick={closeMobileMenu} />
+          
+          <div className="w-full flex flex-col gap-1 pl-4 border-l-2 border-[#00C265]/30 my-1">
+            <span className="text-gray-400 text-sm font-semibold mb-1">Portfolio</span>
+            <NavLink href="/portfolio/clients" label="Our Clients" currentPath={pathname} onClick={closeMobileMenu} />
+            <NavLink href="/portfolio/projects" label="Our Projects" currentPath={pathname} onClick={closeMobileMenu} />
+          </div>
+
           <NavLink href="/team" label="Our Team" currentPath={pathname} onClick={closeMobileMenu} />
           <NavLink href="/blog" label="Blog" currentPath={pathname} onClick={closeMobileMenu} />
 

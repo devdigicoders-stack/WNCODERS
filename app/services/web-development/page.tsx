@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -106,32 +106,26 @@ export default function WebDevelopment() {
     { name: 'Tailwind CSS', icon: <SiTailwindcss size={45} className="text-[#06B6D4]" /> }
   ];
 
-  const projects = [
-    {
-      img: '/image copy 2.png',
-      badge: 'Web Application',
-      title: 'Business Dashboard',
-      desc: 'A comprehensive dashboard for business analytics and reporting.'
-    },
-    {
-      img: '/image copy 3.png',
-      badge: 'E-Commerce',
-      title: 'E-Commerce Store',
-      desc: 'A modern e-commerce platform with seamless shopping experience.'
-    },
-    {
-      img: '/image copy 4.png',
-      badge: 'Corporate',
-      title: 'Digital Agency Website',
-      desc: 'A creative website for a digital agency to showcase services.'
-    },
-    {
-      img: '/image copy 5.png',
-      badge: 'Education',
-      title: 'Online Learning Platform',
-      desc: 'A platform to create and sell online courses with ease.'
-    }
-  ];
+  const [projects, setProjects] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/projects');
+        if (response.ok) {
+          const data = await response.json();
+          const webDevProjects = data.filter((p: any) => p.category === 'Web Development').slice(0, 4);
+          setProjects(webDevProjects);
+        }
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
 
   return (
     <div className="w-full bg-[#f8fafc] font-sans overflow-x-hidden">
@@ -330,27 +324,32 @@ export default function WebDevelopment() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {projects.map((project, idx) => (
-              <div key={idx} className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group flex flex-col">
-                <div className="w-full aspect-[4/3] bg-gray-200 relative overflow-hidden">
-                  <Image 
-                    src={project.img} 
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+          {isLoading ? (
+            <div className="text-center text-gray-500 py-10 text-lg">Loading projects...</div>
+          ) : projects.length === 0 ? (
+            <div className="text-center text-gray-500 py-10 text-lg">No recent web development projects found.</div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {projects.map((project, idx) => (
+                <div key={idx} className="bg-[#f8fafc] rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow group flex flex-col">
+                  <div className="w-full aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                    <img 
+                      src={project.imageUrl || '/image copy 2.png'} 
+                      alt={project.title}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6 flex-grow flex flex-col items-start">
+                    <span className="bg-[#00C265]/10 text-[#00C265] text-xs font-bold px-3 py-1 rounded-full mb-4">
+                      {project.category || 'Web Application'}
+                    </span>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{project.description}</p>
+                  </div>
                 </div>
-                <div className="p-6 flex-grow flex flex-col items-start">
-                  <span className="bg-[#00C265]/10 text-[#00C265] text-xs font-bold px-3 py-1 rounded-full mb-4">
-                    {project.badge}
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{project.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

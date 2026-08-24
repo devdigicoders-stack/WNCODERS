@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import logoImg from '../public/logo.png';
+import logoImg from '../public/WN{Coders} - White logo Transparent.png';
 
 export default function PageTransitionLoader() {
   const pathname = usePathname();
@@ -43,7 +43,7 @@ export default function PageTransitionLoader() {
             alt="WNCoders"
             width={240}
             height={60}
-            className="w-auto h-10 sm:h-12 object-contain drop-shadow-[0_0_15px_rgba(0,194,101,0.1)]"
+            className="w-auto h-12 sm:h-16 object-contain drop-shadow-[0_0_15px_rgba(0,194,101,0.1)]"
             priority
           />
         </div>
