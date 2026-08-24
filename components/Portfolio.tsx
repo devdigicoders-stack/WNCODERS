@@ -6,9 +6,32 @@ import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
 import DemoModal from './DemoModal';
 export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [projectsData, setProjectsData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const autoScrollTimer = useRef<NodeJS.Timeout | null>(null);
   const resumeTimer = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+        const res = await fetch(`${apiUrl}/projects`);
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          setProjectsData(data);
+        } else if (data.data && Array.isArray(data.data)) {
+          setProjectsData(data.data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch projects", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
 
   const startAutoScroll = () => {
     if (autoScrollTimer.current) clearInterval(autoScrollTimer.current);
@@ -48,49 +71,7 @@ export default function Portfolio() {
     };
   }, []);
 
-  const projects = [
-    {
-      title: "Fintech Dashboard",
-      category: "Web Application",
-      image: "/image copy 6.png",
-    },
-    {
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      image: "/image copy 5.png",
-    },
-    {
-      title: "On-Demand Delivery App",
-      category: "Mobile Application",
-      image: "/image copy 4.png",
-    },
-    {
-      title: "Cloud Migration",
-      category: "Cloud Solutions",
-      image: "/image copy 7.png",
-    },
-    // Duplicate for scrolling feel
-    {
-      title: "Fintech Dashboard",
-      category: "Web Application",
-      image: "/image copy 6.png",
-    },
-    {
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      image: "/image copy 5.png",
-    },
-    {
-      title: "On-Demand Delivery App",
-      category: "Mobile Application",
-      image: "/image copy 4.png",
-    },
-    {
-      title: "Cloud Migration",
-      category: "Cloud Solutions",
-      image: "/image copy 7.png",
-    }
-  ];
+  const displayProjects = projectsData.length > 0 ? [...projectsData, ...projectsData, ...projectsData] : [];
 
   return (
     <>
@@ -138,35 +119,66 @@ export default function Portfolio() {
           ref={scrollRef}
           className="w-full lg:flex-1 overflow-x-auto pb-8 relative hide-scroll flex gap-6 snap-x snap-mandatory"
         >
-          {projects.map((project, index) => (
-            <div 
-              key={index} 
-              onClick={() => setIsModalOpen(true)}
-              className="w-[280px] md:w-[340px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 shrink-0 flex flex-col group cursor-pointer snap-start"
-            >
-              
-              {/* Image Container */}
-              <div className="w-full h-[240px] bg-gray-50 relative overflow-hidden">
-                <Image 
-                  src={project.image} 
-                  alt={project.title}
-                  fill
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                  unoptimized
-                />
-              </div>
-              
-              {/* Content */}
-              <div className="p-6 bg-white border-t border-gray-50">
-                <h3 className="text-[#040f1a] text-lg font-bold mb-1 group-hover:text-[#00C265] transition-colors">
-                  {project.title}
-                </h3>
-                <span className="text-gray-500 text-[13px]">
-                  {project.category}
-                </span>
-              </div>
+          {isLoading ? (
+            <div className="w-full flex justify-center items-center py-10">
+               <div className="w-8 h-8 border-4 border-[#00C265] border-t-transparent rounded-full animate-spin"></div>
             </div>
-          ))}
+          ) : (
+            displayProjects.map((project, index) => (
+              <div 
+                key={index} 
+                onClick={() => {
+                  if(project.projectLink) {
+                    window.open(project.projectLink, '_blank');
+                  } else {
+                    setIsModalOpen(true);
+                  }
+                }}
+                className="w-[280px] md:w-[340px] bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 shrink-0 flex flex-col group cursor-pointer snap-start"
+              >
+                
+                {/* Image Container */}
+                <div className="w-full h-[220px] bg-gray-50 relative overflow-hidden">
+                  <Image 
+                    src={project.imageUrl && project.imageUrl.startsWith('http') ? project.imageUrl : (project.imageUrl ? `http://localhost:5000${project.imageUrl}` : "/image copy 5.png")} 
+                    alt={project.title || "Project Image"}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    unoptimized
+                  />
+                  {project.status && (
+                    <div className={`absolute top-4 right-4 px-3 py-1 text-[11px] font-bold rounded-full ${project.status === 'Completed' ? 'bg-[#00C265] text-white' : 'bg-orange-500 text-white shadow-sm'}`}>
+                      {project.status}
+                    </div>
+                  )}
+                </div>
+                
+                {/* Content */}
+                <div className="p-5 bg-white border-t border-gray-50 flex-1 flex flex-col">
+                  <h3 className="text-[#040f1a] text-lg font-bold mb-2 group-hover:text-[#00C265] transition-colors line-clamp-1">
+                    {project.title}
+                  </h3>
+                  {project.description && (
+                    <p className="text-gray-500 text-[13px] leading-relaxed mb-4 line-clamp-2">
+                      {project.description}
+                    </p>
+                  )}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.technologies && project.technologies.slice(0, 3).map((tech: string, i: number) => (
+                      <span key={i} className="px-2.5 py-1 bg-[#f0fdf4] text-[#00C265] text-[11px] font-bold rounded-md whitespace-nowrap">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies && project.technologies.length > 3 && (
+                      <span className="px-2.5 py-1 bg-gray-50 text-gray-500 text-[11px] font-bold rounded-md">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
       </div>
