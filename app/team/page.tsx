@@ -19,9 +19,9 @@ export default function TeamPage() {
         const res = await fetch(`${apiUrl}/team-members`);
         const data = await res.json();
         if (Array.isArray(data)) {
-          setTeamMembers(data.filter((m: any) => m.status === 'Active'));
+          setTeamMembers(data.filter((m: any) => m.status === 'Active').reverse());
         } else if (data.data && Array.isArray(data.data)) {
-           setTeamMembers(data.data.filter((m: any) => m.status === 'Active'));
+           setTeamMembers(data.data.filter((m: any) => m.status === 'Active').reverse());
         }
       } catch (error) {
         console.error("Failed to fetch team members:", error);
