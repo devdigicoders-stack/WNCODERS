@@ -121,10 +121,10 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: 'Web Application Development', desc: 'Custom, scalable, and secure web applications tailored to your unique business needs.', icon: LuCode, features: ['React & Next.js', 'Node.js Backend', 'E-commerce Solutions', 'Custom Dashboards'] },
-              { title: 'Mobile App Development', desc: 'High-performance native and cross-platform mobile apps for iOS and Android.', icon: LuSmartphone, features: ['React Native', 'Flutter', 'UI/UX Excellence', 'App Store Optimization'] },
-              { title: 'Cloud & DevOps Solutions', desc: 'Modernize your infrastructure with secure cloud hosting and automated CI/CD pipelines.', icon: LuCloud, features: ['AWS & Azure', 'Docker & Kubernetes', 'Serverless Architecture', '24/7 Monitoring'] },
-              { title: 'UI/UX Design', desc: 'Stunning and intuitive interfaces that maximize user engagement and retention.', icon: LuPenTool, features: ['Wireframing & Prototyping', 'User Research', 'Interactive Design', 'Brand Identity'] },
+              { title: 'Web Application Development', href: '/services/web-development', desc: 'Custom, scalable, and secure web applications tailored to your unique business needs.', icon: LuCode, features: ['React & Next.js', 'Node.js Backend', 'E-commerce Solutions', 'Custom Dashboards'] },
+              { title: 'Mobile App Development', href: '/services/app-development', desc: 'High-performance native and cross-platform mobile apps for iOS and Android.', icon: LuSmartphone, features: ['React Native', 'Flutter', 'UI/UX Excellence', 'App Store Optimization'] },
+              { title: 'Cloud & DevOps Solutions', href: '/services/cloud-devops', desc: 'Modernize your infrastructure with secure cloud hosting and automated CI/CD pipelines.', icon: LuCloud, features: ['AWS & Azure', 'Docker & Kubernetes', 'Serverless Architecture', '24/7 Monitoring'] },
+              { title: 'UI/UX Design', href: '/services/ui-ux-design', desc: 'Stunning and intuitive interfaces that maximize user engagement and retention.', icon: LuPenTool, features: ['Wireframing & Prototyping', 'User Research', 'Interactive Design', 'Brand Identity'] },
               { title: 'Digital Marketing & SEO', desc: 'Data-driven marketing strategies to increase visibility and drive organic traffic.', icon: LuMegaphone, features: ['Search Engine Optimization', 'Social Media Marketing', 'PPC Campaigns', 'Content Strategy'] },
               { title: 'Database & API Integration', desc: 'Robust data management and seamless integration with third-party platforms.', icon: LuDatabase, features: ['SQL & NoSQL', 'REST & GraphQL APIs', 'Data Migration', 'System Integration'] },
             ].map((service, index) => {
@@ -145,7 +145,7 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact" className="text-[#00C265] font-bold text-[15px] flex items-center gap-2 group-hover:gap-3 transition-all">
+                  <Link href={service.href || "/contact"} className="text-[#00C265] font-bold text-[15px] flex items-center gap-2 group-hover:gap-3 transition-all">
                     Learn More <LuArrowRight size={18} />
                   </Link>
                 </div>

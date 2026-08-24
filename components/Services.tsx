@@ -13,26 +13,32 @@ import {
 import DemoModal from './DemoModal';
 
 
+import { useRouter } from 'next/navigation';
+
 const services = [
   {
     title: 'Web Development',
     description: 'Responsive, scalable and high-performance websites.',
     icon: LuCode,
+    href: '/services/web-development',
   },
   {
     title: 'Mobile App Development',
     description: 'iOS & Android apps that deliver seamless experiences.',
     icon: LuSmartphone,
+    href: '/services/app-development',
   },
   {
     title: 'Cloud Solutions',
     description: 'Scalable, secure and cost-effective cloud infrastructure.',
     icon: LuCloud,
+    href: '/services/cloud-devops',
   },
   {
     title: 'UI/UX Design',
     description: 'Creative designs that enhance user experience and engagement.',
     icon: LuPenTool,
+    href: '/services/ui-ux-design',
   },
   {
     title: 'IT Consulting',
@@ -48,6 +54,7 @@ const services = [
 
 export default function Services() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <>
@@ -75,7 +82,7 @@ export default function Services() {
             return (
               <div 
                 key={index} 
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => service.href ? router.push(service.href) : setIsModalOpen(true)}
                 className="bg-white rounded-[16px] p-4 shadow-md hover:shadow-lg hover:-translate-y-1 border-[1.5px] border-gray-100 hover:border-[#00C265] transition-all duration-300 group flex flex-col h-full cursor-pointer relative"
               >
                 <div className="text-[#00C265] mb-2.5">

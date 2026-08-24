@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { LuMenu, LuX, LuGlobe } from 'react-icons/lu';
-import logoImg from '../public/logo.png';
+import logoImg from '../public/WN{Coders} - White logo Transparent.png';
 
 const NavLink = ({ href, label, currentPath, onClick }: { href: string; label: string; currentPath: string; onClick?: () => void }) => {
   const isActive = currentPath === href;
@@ -82,7 +82,7 @@ export default function Navbar() {
                 alt="WORKNESTCONNECT Logo"
                 width={240}
                 height={60}
-                className="w-auto h-8 sm:h-10 object-contain"
+                className="w-auto h-10 sm:h-12 md:h-14 object-contain"
                 priority
               />
             </Link>
@@ -164,7 +164,7 @@ export default function Navbar() {
             alt="WORKNESTCONNECT Logo"
             width={180}
             height={45}
-            className="w-auto h-8 object-contain"
+            className="w-auto h-10 object-contain"
           />
           <button
             className="text-white p-2 hover:bg-white/10 rounded-md transition-colors"

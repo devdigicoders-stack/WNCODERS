@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuPhone, LuMail, LuMapPin } from 'react-icons/lu';
-import logoImg from '../public/logo.png';
+import logoImg from '../public/WN{Coders} - White logo Transparent.png';
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
                 alt="WORKNESTCONNECT Logo" 
                 width={220} 
                 height={60} 
-                className="w-auto h-12 object-contain"
+                className="w-auto h-16 object-contain"
               />
             </Link>
             <p className="text-gray-300 text-[15px] leading-relaxed">
@@ -65,10 +65,14 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="text-white font-bold mb-6 text-[17px]">Resources</h4>
             <ul className="flex flex-col items-center md:items-start gap-4">
-              {['Blog', 'Case Studies', 'Privacy Policy', 'Terms & Conditions', 'Sitemap'].map((link, i) => (
+              {[
+                { name: 'Blog', href: '/blog' },
+                { name: 'Privacy Policy', href: '/privacy-policy' },
+                { name: 'Terms & Conditions', href: '/terms-and-conditions' }
+              ].map((link, i) => (
                 <li key={i}>
-                  <Link href={link === 'Blog' ? '/blog' : '/contact'} className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
-                    {link}
+                  <Link href={link.href} className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
+                    {link.name}
                   </Link>
                 </li>
               ))}
