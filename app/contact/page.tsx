@@ -62,24 +62,15 @@ export default function ContactPage() {
     <main className="min-h-screen bg-[#f9fafb]">
       
       {/* 1. HERO SECTION */}
-      <section className="w-full bg-[#040f1a] pt-10 pb-16 md:py-28 relative overflow-hidden">
+      <section className="w-full bg-[#040f1a] pt-10 pb-16 md:pt-16 md:pb-32 relative overflow-hidden">
         {/* Background Subtle Gradient/Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00C265] rounded-full opacity-[0.05] blur-[120px] pointer-events-none"></div>
 
-        <div className="max-w-[1200px] mx-auto px-6 sm:px-10 relative z-10 md:mt-10">
+        <div className="max-w-[1200px] mx-auto px-6 sm:px-10 relative z-10 md:mt-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             
             {/* Left Content */}
             <div>
-              {/* Breadcrumbs */}
-              <div className="flex items-center gap-2 text-sm font-medium text-gray-400 mb-4">
-                <Link href="/" className="hover:text-[#00C265] transition-colors flex items-center gap-1">
-                  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="14" width="14" className="text-[#00C265]" xmlns="http://www.w3.org/2000/svg"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                  Home
-                </Link>
-                <LuChevronRight size={14} className="text-gray-500" />
-                <span className="text-gray-300">Contact Us</span>
-              </div>
 
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
                 Contact <span className="text-[#00C265]">Us</span>
@@ -112,8 +103,8 @@ export default function ContactPage() {
             </div>
 
             {/* Right Image */}
-            <div className="relative h-[300px] lg:h-[400px] w-full flex justify-center lg:justify-end items-center mt-10 lg:mt-0">
-               <div className="relative w-full max-w-[450px] h-full">
+            <div className="relative h-[280px] lg:h-[360px] w-full flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
+               <div className="relative w-full max-w-[420px] h-full">
                  <Image 
                    src="/image copy 3.png" 
                    fill 
@@ -129,57 +120,56 @@ export default function ContactPage() {
       </section>
 
       {/* 2. CONTACT INFO CARDS */}
-      <section className="w-full -mt-10 relative z-20">
+      <section className="w-full -mt-16 md:-mt-24 relative z-20">
          <div className="max-w-[1400px] mx-auto px-6 sm:px-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                
                {/* Location Card */}
-               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col items-center justify-start text-center gap-4 hover:shadow-md transition-shadow h-full">
                   <div className="w-12 h-12 rounded-full bg-[#f0fdf4] flex items-center justify-center shrink-0 text-[#00C265]">
                      <LuMapPin size={22} />
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center">
                      <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Our Location</h4>
                      <p className="text-gray-500 text-sm leading-relaxed">
-                        123 Software Street,<br/>Tech City, TC 12345,<br/>United States
+                        4th Floor, Office 405, Room 09,<br/>Central Complex, Near Doha Municipality,<br/>B Ring Rd, Doha, Qatar
                      </p>
                   </div>
                </div>
 
                {/* Call Us Card */}
-               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col items-center justify-start text-center gap-4 hover:shadow-md transition-shadow h-full">
                   <div className="w-12 h-12 rounded-full bg-[#f0fdf4] flex items-center justify-center shrink-0 text-[#00C265]">
                      <LuPhone size={22} />
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center">
                      <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Call Us</h4>
                      <p className="text-gray-500 text-sm leading-relaxed flex flex-col gap-1">
-                        <a href="tel:+919140967607" className="hover:text-[#00C265] transition-colors">+91 9140967607</a>
-                        <a href="tel:+916394296293" className="hover:text-[#00C265] transition-colors">+91 6394296293</a>
+                        <a href="tel:+97431175515" className="hover:text-[#00C265] transition-colors">+974 31175515</a>
+                        <a href="tel:+97431171127" className="hover:text-[#00C265] transition-colors">+974 31171127</a>
                      </p>
                   </div>
                </div>
 
                {/* Email Us Card */}
-               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col items-center justify-start text-center gap-4 hover:shadow-md transition-shadow h-full">
                   <div className="w-12 h-12 rounded-full bg-[#f0fdf4] flex items-center justify-center shrink-0 text-[#00C265]">
                      <LuMail size={22} />
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center">
                      <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Email Us</h4>
                      <p className="text-gray-500 text-sm leading-relaxed flex flex-col gap-1">
-                        <a href="mailto:info@thedigicoders.com" className="hover:text-[#00C265] transition-colors">info@thedigicoders.com</a>
-                        <a href="mailto:digicoderstech@gmail.com" className="hover:text-[#00C265] transition-colors">digicoderstech@gmail.com</a>
+                        <a href="mailto:info@worknestconnect.com" className="hover:text-[#00C265] transition-colors">info@worknestconnect.com</a>
                      </p>
                   </div>
                </div>
 
                {/* Working Hours Card */}
-               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col items-center justify-start text-center gap-4 hover:shadow-md transition-shadow h-full">
                   <div className="w-12 h-12 rounded-full bg-[#f0fdf4] flex items-center justify-center shrink-0 text-[#00C265]">
                      <LuClock size={22} />
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center">
                      <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Working Hours</h4>
                      <p className="text-gray-500 text-sm leading-relaxed">
                         Mon - Fri: 9:00 AM - 6:00 PM<br/>Sat - Sun: Closed
@@ -221,7 +211,7 @@ export default function ContactPage() {
                   <h2 className="text-2xl font-bold text-[#040f1a] mb-6">Our Location</h2>
                   
                   {/* Map Box */}
-                  <div className="w-full h-[400px] bg-gray-200 rounded-3xl overflow-hidden shadow-sm border border-gray-100 relative mb-6">
+                  <div className="w-full h-[520px] bg-gray-200 rounded-3xl overflow-hidden shadow-sm border border-gray-100 relative">
                      {/* Dummy Map Image placeholder since we don't have an API key */}
                      <div className="absolute inset-0 bg-[#e5e7eb] flex items-center justify-center">
                         {/* We use a static dummy iframe to simulate a map */}
@@ -237,26 +227,13 @@ export default function ContactPage() {
                         ></iframe>
                         {/* Custom Marker overlay */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3 w-[280px]">
-                           <div className="w-10 h-10 rounded-full bg-[#f0fdf4] flex items-center justify-center text-[#00C265] shrink-0">
+                           <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500 shrink-0">
                               <LuMapPin size={20} />
                            </div>
                            <div className="text-[11px] text-gray-600 font-medium leading-relaxed">
                               4th Floor, Office 405, Room 09, Central Complex, Near Doha Municipality, B Ring Rd, Doha, Qatar
                            </div>
                         </div>
-                     </div>
-                  </div>
-
-                  {/* Visit Office Box */}
-                  <div className="bg-[#f0fdf4] border border-[#bbf7d0] rounded-2xl p-6 flex items-start gap-4">
-                     <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm text-[#00C265]">
-                        <LuBuilding size={22} />
-                     </div>
-                     <div>
-                        <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Visit Our Office</h4>
-                        <p className="text-gray-600 text-sm leading-relaxed m-0">
-                           We welcome you to visit our office. Please call us before coming to ensure availability.
-                        </p>
                      </div>
                   </div>
 
@@ -282,7 +259,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Sales & Partnerships</h3>
                   <p className="text-gray-500 text-sm mb-4">Interested in our services? Let's talk about how we can help your business grow.</p>
-                  <a href="mailto:info@thedigicoders.com" className="text-[#00C265] font-bold hover:underline">info@thedigicoders.com</a>
+                  <a href="mailto:info@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">info@worknestconnect.com</a>
                </div>
 
                {/* Support */}
@@ -292,7 +269,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Technical Support</h3>
                   <p className="text-gray-500 text-sm mb-4">Already a customer? Our dedicated support team is here to help you 24/7.</p>
-                  <a href="mailto:digicoderstech@gmail.com" className="text-[#00C265] font-bold hover:underline">digicoderstech@gmail.com</a>
+                  <a href="mailto:info@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">info@worknestconnect.com</a>
                </div>
 
                {/* Press */}
@@ -302,7 +279,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Press & Media</h3>
                   <p className="text-gray-500 text-sm mb-4">For media inquiries, interviews, or press resources, please contact our PR team.</p>
-                  <a href="mailto:info@thedigicoders.com" className="text-[#00C265] font-bold hover:underline">info@thedigicoders.com</a>
+                  <a href="mailto:info@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">info@worknestconnect.com</a>
                </div>
             </div>
          </div>

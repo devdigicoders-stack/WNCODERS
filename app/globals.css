@@ -66,3 +66,17 @@ body {
 .goog-logo-link {
   display: none !important;
 }
+ /* Thin Green Scrollbar */
+.custom-scrollbar-green::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar-green::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar-green::-webkit-scrollbar-thumb {
+  background: #00C265;
+  border-radius: 4px;
+}
+.custom-scrollbar-green::-webkit-scrollbar-thumb:hover {
+  background: #00a355;
+}

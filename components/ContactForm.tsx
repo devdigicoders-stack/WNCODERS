@@ -160,7 +160,7 @@ export default function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+91 9140967607" 
+              placeholder="+974 31175515" 
               className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-[#00C265] focus:ring-2 focus:ring-[#00C265]/20 transition-all text-gray-800 placeholder-gray-400"
             />
           </div>

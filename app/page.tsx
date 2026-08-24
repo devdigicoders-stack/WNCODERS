@@ -55,12 +55,12 @@ export default function Home() {
                 Explore Services
               </Link>
               
-              <Link href="/contact" className="flex items-center gap-4 text-white hover:text-[#00C265] font-bold text-[17px] transition-colors group">
+              <a href="tel:+97431175515" className="flex items-center gap-4 text-white hover:text-[#00C265] font-bold text-[17px] transition-colors group">
                 <span className="flex items-center justify-center w-14 h-14 rounded-full border-2 border-gray-600 group-hover:border-[#00C265] transition-colors bg-white/5">
                   <LuPhone size={20} className="text-white group-hover:text-[#00C265] transition-colors" />
                 </span>
                 Contact Now
-              </Link>
+              </a>
             </div>
           </div>
 

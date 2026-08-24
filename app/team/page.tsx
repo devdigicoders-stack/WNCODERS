@@ -144,7 +144,7 @@ export default function TeamPage() {
                           <LuLinkedin size={14} />
                         </a>
                       )}
-                      <a href="mailto:digicoderstech@gmail.com" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
+                      <a href="mailto:info@worknestconnect.com" className="w-8 h-8 rounded-full bg-[#f0fdf4] text-[#00C265] flex items-center justify-center hover:bg-[#00C265] hover:text-white transition-colors">
                         <LuMail size={14} />
                       </a>
                     </div>

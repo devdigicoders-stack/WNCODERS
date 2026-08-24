@@ -18,7 +18,14 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
   if (!isOpen) return null;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    if (name === 'phoneNumber') {
+      const sanitizedValue = value.replace(/[^0-9+]/g, '');
+      setFormData({ ...formData, [name]: sanitizedValue });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -105,7 +112,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-[#00C265] focus:ring-1 focus:ring-[#00C265] transition-colors placeholder:text-gray-400"
-                placeholder="+91 9140967607"
+                placeholder="+974 31175515"
               />
             </div>
 

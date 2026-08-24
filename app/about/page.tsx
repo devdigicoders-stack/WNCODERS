@@ -330,13 +330,13 @@ export default function AboutPage() {
             </p>
 
             {/* Right Grid (Replaced with Image) */}
-            <div className="w-full mt-0 flex items-center justify-start lg:justify-center">
+            <div className="w-full mt-8 flex items-start justify-start">
               <Image 
                 src="/image-removebg-preview (5).png" 
                 alt="Services Grid" 
                 width={800}
                 height={600}
-                className="object-contain w-[90%] md:w-[85%] h-auto drop-shadow-[0_0_15px_rgba(0,194,101,0.15)]"
+                className="object-contain object-left w-full sm:w-[90%] h-auto drop-shadow-[0_0_15px_rgba(0,194,101,0.15)]"
                 unoptimized
               />
             </div>

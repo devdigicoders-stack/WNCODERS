@@ -84,11 +84,11 @@ export default function Footer() {
                   <LuPhone className="text-[#00C265] group-hover:text-white transition-colors" size={16} />
                 </div>
                 <div className="flex flex-col gap-1 md:mt-1">
-                  <a href="tel:+919140967607" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
-                    +91 9140967607
+                  <a href="tel:+97431175515" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
+                    +974 31175515
                   </a>
-                  <a href="tel:+916394296293" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
-                    +91 6394296293
+                  <a href="tel:+97431171127" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
+                    +974 31171127
                   </a>
                 </div>
               </li>
@@ -97,11 +97,8 @@ export default function Footer() {
                   <LuMail className="text-[#00C265] group-hover:text-white transition-colors" size={16} />
                 </div>
                 <div className="flex flex-col gap-1 md:mt-1">
-                  <a href="mailto:info@thedigicoders.com" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
-                    info@thedigicoders.com
-                  </a>
-                  <a href="mailto:digicoderstech@gmail.com" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
-                    digicoderstech@gmail.com
+                  <a href="mailto:info@worknestconnect.com" className="text-gray-300 hover:text-white text-[15px] font-medium transition-colors">
+                    info@worknestconnect.com
                   </a>
                 </div>
               </li>
@@ -109,9 +106,11 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-full bg-[#00C265]/10 flex items-center justify-center group-hover:bg-[#00C265] transition-colors shrink-0 md:mt-1">
                   <LuMapPin className="text-[#00C265] group-hover:text-white transition-colors" size={16} />
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Central+Complex,+Near+Doha+Municipality,+B+Ring+Rd,+Doha,+Qatar" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00C265] hover:underline text-[15px] font-medium leading-relaxed transition-all cursor-pointer">
-                  4th Floor, Office 405, Room 09,<br />Central Complex, Near Doha Municipality,<br />B Ring Rd, Doha, Qatar
-                </a>
+                <div className="flex flex-col gap-1 md:mt-1 text-center md:text-left">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Central+Complex,+Near+Doha+Municipality,+B+Ring+Rd,+Doha,+Qatar" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00C265] hover:underline text-[15px] font-medium leading-relaxed transition-all cursor-pointer block">
+                    4th Floor, Office 405, Room 09, Central Complex, Near Doha Municipality, B Ring Rd, Doha, Qatar
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
