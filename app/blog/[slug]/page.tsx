@@ -20,7 +20,7 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (post && post.content) {
+    if (!loading && post && post.content) {
       setTimeout(() => {
         const contentDiv = document.getElementById('blog-content');
         if (contentDiv) {
@@ -35,14 +35,14 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
             tocData.push({
               id: heading.id,
               text: heading.textContent || '',
-              level: parseInt(heading.tagName.charAt(1))
+              level: parseInt(heading.tagName.charAt(1) || '2')
             });
           });
           setToc(tocData);
         }
-      }, 100);
+      }, 500); // Increased timeout to ensure DOM is fully updated
     }
-  }, [post]);
+  }, [post, loading]);
 
   useEffect(() => {
     const fetchData = async () => {
