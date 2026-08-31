@@ -142,7 +142,7 @@ export default async function ProjectsPage() {
               <div key={idx} className="bg-white rounded-[24px] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden group hover:shadow-[0_10px_40px_rgba(0,194,101,0.08)] transition-all duration-300 flex flex-col">
                 <div className="w-full h-[260px] bg-[#f8f9fa] relative overflow-hidden flex items-center justify-center pt-8 px-6">
                   <div className="relative w-full h-full rounded-t-xl overflow-hidden shadow-lg shadow-gray-200/50">
-                     <Image src={project.image} alt={project.title} fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                     <Image src={project.image} alt={project.title} fill className="object-contain group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   
                   {/* Floating Icon */}
