@@ -93,7 +93,7 @@ export default function AppDevelopment() {
         const response = await fetch('http://localhost:5000/api/projects');
         if (response.ok) {
           const data = await response.json();
-          const appDevProjects = data.filter((p: any) => p.category === 'App Development').slice(0, 4);
+          const appDevProjects = data.filter((p: any) => p.category?.name === 'App Development' || p.category === 'App Development').slice(0, 4);
           setProjects(appDevProjects);
         }
       } catch (error) {
@@ -320,7 +320,7 @@ export default function AppDevelopment() {
                   </div>
                   <div className="p-6 flex-grow flex flex-col items-start">
                     <span className="bg-[#00C265]/10 text-[#00C265] text-xs font-bold px-3 py-1 rounded-full mb-4">
-                      {project.category || 'App Development'}
+                      {project.category?.name || project.category || 'App Development'}
                     </span>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{project.description}</p>

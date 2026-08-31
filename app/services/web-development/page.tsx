@@ -115,7 +115,7 @@ export default function WebDevelopment() {
         const response = await fetch('http://localhost:5000/api/projects');
         if (response.ok) {
           const data = await response.json();
-          const webDevProjects = data.filter((p: any) => p.category === 'Web Development').slice(0, 4);
+          const webDevProjects = data.filter((p: any) => p.category?.name === 'Web Development' || p.category === 'Web Development').slice(0, 4);
           setProjects(webDevProjects);
         }
       } catch (error) {
@@ -341,7 +341,7 @@ export default function WebDevelopment() {
                   </div>
                   <div className="p-6 flex-grow flex flex-col items-start">
                     <span className="bg-[#00C265]/10 text-[#00C265] text-xs font-bold px-3 py-1 rounded-full mb-4">
-                      {project.category || 'Web Application'}
+                      {project.category?.name || project.category || 'Web Application'}
                     </span>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{project.description}</p>
