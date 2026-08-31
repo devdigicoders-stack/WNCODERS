@@ -90,7 +90,8 @@ export default function AppDevelopment() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/projects');
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+        const response = await fetch(`${apiUrl}/projects`);
         if (response.ok) {
           const data = await response.json();
           const appDevProjects = data.filter((p: any) => p.category?.name === 'App Development' || p.category === 'App Development').slice(0, 4);
