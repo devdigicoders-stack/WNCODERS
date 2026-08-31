@@ -56,7 +56,7 @@ export default function AboutPage() {
           {/* Right Image */}
           <div className="relative w-full h-[300px] lg:h-[400px] flex justify-center items-center">
             <Image 
-              src="/AboutHero.png" 
+              src="/3 copy 2.png" 
               alt="WNCoders Merger" 
               fill
               className="object-contain"

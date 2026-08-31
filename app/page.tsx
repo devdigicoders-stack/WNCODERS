@@ -68,15 +68,13 @@ export default function Home() {
           <div className="w-full lg:w-[45%] mt-16 lg:mt-0 flex justify-center lg:justify-start relative z-10">
              <div className="relative w-full max-w-[600px]">
                <Image 
-                 src="/image copy 10.png" 
+                 src="/4.png" 
                  alt="Digital Solutions Hand" 
                  width={1200} 
                  height={1200} 
                  className="w-full h-auto object-contain object-right animate-float"
                  priority
                />
-               {/* Gradient Fade to hide the sharp bottom cut */}
-               <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#040f1a] to-transparent pointer-events-none"></div>
              </div>
           </div>
         </div>
