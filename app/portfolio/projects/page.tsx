@@ -43,7 +43,7 @@ export default async function ProjectsPage() {
   const projects = fetchedProjects.length > 0 
     ? fetchedProjects.map((p: any) => ({
         title: p.title,
-        category: p.category,
+        category: p.category?.name || p.category || "General",
         image: p.imageUrl?.startsWith('http') ? p.imageUrl : `${backendUrl}${p.imageUrl}`,
         desc: p.description,
         projectLink: p.projectLink || "#",
