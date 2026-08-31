@@ -318,7 +318,7 @@ export default function AppDevelopment() {
                     <img 
                       src={project.imageUrl || '/image copy 6.png'} 
                       alt={project.title}
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-6 flex-grow flex flex-col items-start">

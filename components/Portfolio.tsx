@@ -144,7 +144,7 @@ export default function Portfolio() {
                     src={project.imageUrl && project.imageUrl.startsWith('http') ? project.imageUrl : (project.imageUrl ? `http://localhost:5000${project.imageUrl}` : "/image copy 5.png")} 
                     alt={project.title || "Project Image"}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain group-hover:scale-105 transition-transform duration-500"
                     unoptimized
                   />
                   {project.status && (
