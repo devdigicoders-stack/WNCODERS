@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowRight, LuRocket, LuSmile, LuTrophy, LuMonitor, LuSmartphone, LuShoppingCart, LuBuilding, LuGlobe, LuMessageSquare, LuCode, LuHandshake } from 'react-icons/lu';
+import { LuArrowRight, LuRocket, LuSmile, LuTrophy, LuMonitor, LuSmartphone, LuShoppingCart, LuBuilding, LuGlobe, LuMessageSquare, LuCode, LuHandshake, LuPhone } from 'react-icons/lu';
+import { SiWhatsapp } from 'react-icons/si';
 import StartProjectButton from '@/components/StartProjectButton';
 
 export const metadata: Metadata = {
@@ -159,9 +160,17 @@ export default async function ProjectsPage() {
                     {project.desc}
                   </p>
                   
-                  <Link href={project.projectLink || "#"} className="inline-flex items-center gap-2 text-gray-600 font-semibold text-sm hover:text-[#00C265] transition-colors border border-gray-200 hover:border-[#00C265] rounded-full px-5 py-2 w-fit">
-                    View Case Study <LuArrowRight size={16} />
-                  </Link>
+                  <div className="flex w-full gap-2 mt-auto">
+                    <Link href={project.projectLink || "#"} target="_blank" className="flex-1 flex items-center justify-center gap-1.5 text-white bg-[#00C265] font-semibold text-[12px] hover:bg-[#00a857] transition-colors rounded-md py-2.5 shadow-sm">
+                      Visit <LuArrowRight size={14} />
+                    </Link>
+                    <a href="tel:+97431175515" className="flex-1 flex items-center justify-center gap-1.5 text-gray-700 bg-gray-100 font-semibold text-[12px] hover:bg-gray-200 transition-colors rounded-md py-2.5">
+                      <LuPhone size={14} /> Call
+                    </a>
+                    <a href="https://wa.me/97431175515" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 text-white bg-[#25D366] font-semibold text-[12px] hover:bg-[#128C7E] transition-colors rounded-md py-2.5 shadow-sm">
+                      <SiWhatsapp size={14} /> WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

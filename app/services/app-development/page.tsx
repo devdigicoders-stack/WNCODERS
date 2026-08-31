@@ -12,7 +12,8 @@ import {
   LuRocket,
   LuArrowRight,
   LuMessageCircle,
-  LuBlocks
+  LuBlocks,
+  LuPhone
 } from 'react-icons/lu';
 import { 
   SiSwift,
@@ -24,7 +25,8 @@ import {
   SiMongodb,
   SiMysql,
   SiAndroid,
-  SiApple
+  SiApple,
+  SiWhatsapp
 } from 'react-icons/si';
 import DemoModal from '../../../components/DemoModal';
 
@@ -324,7 +326,18 @@ export default function AppDevelopment() {
                       {project.category?.name || project.category || 'App Development'}
                     </span>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{project.description}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">{project.description}</p>
+                    <div className="flex w-full gap-2 mt-auto">
+                      <Link href={project.projectLink || "#"} target="_blank" className="flex-1 flex items-center justify-center gap-1 text-white bg-[#00C265] font-semibold text-[11px] sm:text-[12px] hover:bg-[#00a857] transition-colors rounded-md py-2 shadow-sm px-1">
+                        Visit <LuArrowRight size={14} />
+                      </Link>
+                      <a href="tel:+97431175515" className="flex-1 flex items-center justify-center gap-1 text-gray-700 bg-gray-100 font-semibold text-[11px] sm:text-[12px] hover:bg-gray-200 transition-colors rounded-md py-2 px-1">
+                        <LuPhone size={14} /> Call
+                      </a>
+                      <a href="https://wa.me/97431175515" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1 text-white bg-[#25D366] font-semibold text-[11px] sm:text-[12px] hover:bg-[#128C7E] transition-colors rounded-md py-2 shadow-sm px-1">
+                        <SiWhatsapp size={14} /> WhatsApp
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}

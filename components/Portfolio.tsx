@@ -2,7 +2,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuArrowRight, LuArrowLeft } from 'react-icons/lu';
+import { LuArrowRight, LuArrowLeft, LuPhone } from 'react-icons/lu';
+import { SiWhatsapp } from 'react-icons/si';
 import DemoModal from './DemoModal';
 export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -174,6 +175,17 @@ export default function Portfolio() {
                         +{project.technologies.length - 3}
                       </span>
                     )}
+                  </div>
+                  <div className="flex w-full gap-2 mt-4 pt-4 border-t border-gray-50">
+                      <a href={project.projectLink || "#"} target="_blank" onClick={(e) => e.stopPropagation()} className="flex-1 flex items-center justify-center gap-1 text-white bg-[#00C265] font-semibold text-[11px] sm:text-[12px] hover:bg-[#00a857] transition-colors rounded-md py-2 shadow-sm px-1">
+                        Visit <LuArrowRight size={14} />
+                      </a>
+                      <a href="tel:+97431175515" onClick={(e) => e.stopPropagation()} className="flex-1 flex items-center justify-center gap-1 text-gray-700 bg-gray-100 font-semibold text-[11px] sm:text-[12px] hover:bg-gray-200 transition-colors rounded-md py-2 px-1">
+                        <LuPhone size={14} /> Call
+                      </a>
+                      <a href="https://wa.me/97431175515" onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1 text-white bg-[#25D366] font-semibold text-[11px] sm:text-[12px] hover:bg-[#128C7E] transition-colors rounded-md py-2 shadow-sm px-1">
+                        <SiWhatsapp size={14} /> WhatsApp
+                      </a>
                   </div>
                 </div>
               </div>
