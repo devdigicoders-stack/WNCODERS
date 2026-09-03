@@ -130,7 +130,7 @@ function BlogContent() {
           {/* Right Column: Image */}
           <div className="relative h-[300px] lg:h-[400px] w-full block">
             <Image
-              src="/bloghero.png"
+              src="/wncoders-software-technology-blog.png"
               alt="Blog Hero Image"
               fill
               className="object-contain"

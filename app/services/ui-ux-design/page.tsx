@@ -148,7 +148,7 @@ export default function UiUxDesign() {
              {/* Image Graphic on Right */}
              <div className="relative w-full max-w-[550px] lg:-mr-8 aspect-[4/3] lg:aspect-auto lg:h-[450px] flex items-center justify-center">
                 <Image 
-                  src="/image copy 14.png" 
+                  src="/ui-ux-design-services-wncoders.png" 
                   alt="UI/UX Design Graphic" 
                   fill
                   className="object-contain drop-shadow-[0_20px_50px_rgba(0,194,101,0.2)]"

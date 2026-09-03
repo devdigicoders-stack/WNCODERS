@@ -195,7 +195,7 @@ export default function PrivacyPolicy() {
           {/* Image Graphic on Right */}
           <div className="hidden md:block absolute right-10 top-1/2 -translate-y-1/2">
              <Image 
-                src="/Polciy.png" 
+                src="/wncoders-privacy-policy.png" 
                 alt="Privacy Policy Graphic" 
                 width={480} 
                 height={480} 

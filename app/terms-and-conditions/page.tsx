@@ -159,7 +159,7 @@ export default function TermsAndConditions() {
           {/* Image Graphic on Right */}
           <div className="hidden md:block absolute right-10 top-1/2 -translate-y-1/2">
              <Image 
-                src="/term.png" 
+                src="/wncoders-terms-and-conditions.png" 
                 alt="Terms and Conditions Graphic" 
                 width={480} 
                 height={480} 

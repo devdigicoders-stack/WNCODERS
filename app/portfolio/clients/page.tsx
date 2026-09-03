@@ -14,20 +14,20 @@ export const metadata: Metadata = {
 
 export default function ClientsPage() {
   const logos = [
-    "/logo/1_20260727_114420_0000.png",
-    "/logo/2_20260727_114420_0001.png",
-    "/logo/3_20260727_114420_0002.png",
-    "/logo/4_20260727_114420_0003.png",
-    "/logo/5_20260727_114420_0004.png",
-    "/logo/6_20260727_114420_0005.png",
-    "/logo/7_20260727_114420_0006.png",
-    "/logo/8_20260727_114421_0007.png",
-    "/logo/10_20260727_114421_0009.png",
-    "/logo/11_20260727_114421_0010.png",
-    "/logo/12_20260727_114421_0011.png",
-    "/logo/13_20260727_114421_0012.png",
-    "/logo/14_20260727_114421_0013.png",
-    "/logo/Divine Perfume Logo.jpg.jpeg"
+    "/logo/wncoders-client-partner-1.png",
+    "/logo/wncoders-client-partner-2.png",
+    "/logo/wncoders-client-partner-3.png",
+    "/logo/wncoders-client-partner-4.png",
+    "/logo/wncoders-client-partner-5.png",
+    "/logo/wncoders-client-partner-6.png",
+    "/logo/wncoders-client-partner-7.png",
+    "/logo/wncoders-client-partner-8.png",
+    "/logo/wncoders-client-partner-10.png",
+    "/logo/wncoders-client-partner-11.png",
+    "/logo/wncoders-client-partner-12.png",
+    "/logo/wncoders-client-partner-13.png",
+    "/logo/wncoders-client-partner-14.png",
+    "/logo/divine-perfume-client-logo.jpeg"
   ];
 
   return (
@@ -105,8 +105,8 @@ export default function ClientsPage() {
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative mt-10 lg:mt-0">
             <div className="relative w-full max-w-[600px] aspect-[4/3]">
               <Image 
-                src="/image copy 17.png" 
-                alt="Global Clients" 
+                src="/wncoders-global-clients-portfolio.png" 
+                alt="WNCoders Global Client Partnerships and Success Stories" 
                 fill
                 className="object-contain"
                 priority

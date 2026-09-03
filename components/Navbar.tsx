@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { LuMenu, LuX, LuGlobe } from 'react-icons/lu';
-import logoImg from '../public/WN{Coders} - White logo Transparent.png';
+import logoImg from '../public/wncoders-software-company-logo.png';
 
 const NavLink = ({ href, label, currentPath, onClick }: { href: string; label: string; currentPath: string; onClick?: () => void }) => {
   const isActive = currentPath === href;

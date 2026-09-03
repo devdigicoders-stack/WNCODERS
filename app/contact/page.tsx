@@ -105,7 +105,7 @@ export default function ContactPage() {
             <div className="relative h-[280px] lg:h-[360px] w-full flex justify-center lg:justify-end items-center mt-8 lg:mt-0">
                <div className="relative w-full max-w-[420px] h-full">
                  <Image 
-                   src="/image copy 3.png" 
+                   src="/wncoders-contact-support.png" 
                    fill 
                    className="object-contain drop-shadow-[0_20px_50px_rgba(0,194,101,0.2)] animate-[bounce_4s_infinite]" 
                    alt="Contact Us Envelope" 

@@ -54,7 +54,7 @@ export default function AboutPage() {
           {/* Right Image */}
           <div className="relative w-full h-[300px] lg:h-[400px] flex justify-center items-center">
             <Image 
-              src="/3 copy 2.png" 
+              src="/wncoders-digicoders-worknest-merger.png" 
               alt="WNCoders Merger" 
               fill
               className="object-contain"
@@ -185,7 +185,7 @@ export default function AboutPage() {
             
             <div className="relative w-full md:w-[50%] mt-8 md:mt-0 flex justify-end items-center pointer-events-none">
                <Image 
-                 src="/Digicoderslogo.png" 
+                 src="/digicoders-technology-solutions-logo.png" 
                  alt="DigiCoders Solutions" 
                  width={600}
                  height={600}
@@ -228,7 +228,7 @@ export default function AboutPage() {
             
             <div className="relative w-full md:w-[50%] mt-8 md:mt-0 flex justify-end items-center pointer-events-none">
                <Image 
-                 src="/image copy 6.png" 
+                 src="/worknest-connect-digital-growth-partner.png" 
                  alt="WorkNest Solutions" 
                  width={600}
                  height={600}
@@ -298,7 +298,7 @@ export default function AboutPage() {
           {/* Left Side: 3D Image */}
           <div className="w-full flex items-center justify-center relative">
              <Image 
-               src="/image copy 7.png" 
+               src="/complete-digital-ecosystem-services.png" 
                alt="Digital Ecosystem" 
                width={800}
                height={800}
@@ -329,7 +329,7 @@ export default function AboutPage() {
             {/* Right Grid (Replaced with Image) */}
             <div className="w-full mt-8 flex items-start justify-start">
               <Image 
-                src="/image-removebg-preview (5).png" 
+                src="/wncoders-digital-services-grid.png" 
                 alt="Services Grid" 
                 width={800}
                 height={600}
@@ -392,7 +392,7 @@ export default function AboutPage() {
             }}
           >
              <Image 
-               src="/image copy 8.png" 
+               src="/wncoders-digital-success-partnership.png" 
                alt="Handshake Digital Network" 
                width={800}
                height={800}

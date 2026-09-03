@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuPhone, LuMail, LuMapPin } from 'react-icons/lu';
-import logoImg from '../public/WN{Coders} - White logo Transparent.png';
+import logoImg from '../public/wncoders-software-company-logo.png';
 
 export default function Footer() {
   return (

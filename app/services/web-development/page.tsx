@@ -180,7 +180,7 @@ export default function WebDevelopment() {
              {/* Image Graphic on Right */}
              <div className="relative w-full max-w-[450px] aspect-[4/3] flex items-center justify-center">
                 <Image 
-                  src="/WebDevlopmeet.png" 
+                  src="/web-development-services-wncoders.png" 
                   alt="Web Development Graphic" 
                   fill
                   className="object-contain opacity-95 drop-shadow-[0_20px_50px_rgba(0,194,101,0.15)] animate-[pulse_10s_ease-in-out_infinite]"

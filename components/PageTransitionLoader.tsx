@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import logoImg from '../public/WN{Coders} - White logo Transparent.png';
+import logoImg from '../public/wncoders-software-company-logo.png';
 
 export default function PageTransitionLoader() {
   const pathname = usePathname();

@@ -160,7 +160,7 @@ export default function DigitalMarketingSEO() {
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative mt-10 lg:mt-0">
              <div className="relative w-full max-w-[650px] aspect-[4/3] lg:aspect-auto lg:h-[500px] flex items-center justify-center">
                 <Image 
-                  src="/image copy 15.png" 
+                  src="/digital-marketing-seo-services-wncoders.png" 
                   alt="SEO Dashboard Graphic" 
                   fill
                   className="object-contain drop-shadow-[0_20px_50px_rgba(0,194,101,0.2)]"

@@ -159,7 +159,7 @@ export default function AppDevelopment() {
              {/* Image Graphic on Right */}
              <div className="relative w-full max-w-[550px] lg:-mr-8 aspect-[4/3] lg:aspect-auto lg:h-[480px] flex items-center justify-center">
                 <Image 
-                  src="/image copy 12.png" 
+                  src="/mobile-app-development-services-wncoders.png" 
                   alt="App Development Graphic" 
                   fill
                   className="object-contain drop-shadow-[0_20px_50px_rgba(0,194,101,0.2)]"

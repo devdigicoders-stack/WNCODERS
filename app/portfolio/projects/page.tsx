@@ -102,7 +102,7 @@ export default async function ProjectsPage() {
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
             <div className="relative w-full max-w-[600px] aspect-[4/3]">
               <Image 
-                src="/image copy 16.png" 
+                src="/wncoders-innovative-software-projects.png" 
                 alt="Innovative Solutions" 
                 fill
                 className="object-contain drop-shadow-[0_0_40px_rgba(0,194,101,0.2)] animate-[pulse_8s_ease-in-out_infinite]"

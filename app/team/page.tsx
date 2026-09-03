@@ -86,7 +86,7 @@ export default function TeamPage() {
             {/* Right Image */}
             <div className="relative w-full flex justify-center items-center h-[280px] lg:h-[400px]">
                <img 
-                 src="/image copy 4.png" 
+                 src="/wncoders-expert-development-team.png" 
                  alt="Team illustration" 
                  className="object-contain w-full h-full"
                />

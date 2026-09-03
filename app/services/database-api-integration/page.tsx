@@ -146,7 +146,7 @@ export default function DatabaseApiIntegration() {
              {/* Image Graphic on Right */}
              <div className="relative w-full max-w-[450px] aspect-[1/1] flex items-center justify-center">
                 <Image 
-                  src="/database_api_graphic.jpg" 
+                  src="/database-api-integration-services-wncoders.jpg" 
                   alt="Database & API Integration Graphic" 
                   fill
                   className="object-cover rounded-2xl shadow-[0_0_50px_rgba(0,194,101,0.2)] opacity-95 animate-[pulse_10s_ease-in-out_infinite]"

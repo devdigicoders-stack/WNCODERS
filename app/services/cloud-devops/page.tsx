@@ -194,7 +194,7 @@ export default function CloudDevOps() {
              {/* Image Graphic on Right */}
              <div className="relative w-full max-w-[550px] lg:-mr-8 aspect-[4/3] lg:aspect-auto lg:h-[450px] flex items-center justify-center">
                 <Image 
-                  src="/image copy 13.png" 
+                  src="/cloud-devops-services-wncoders.png" 
                   alt="Cloud and DevOps Graphic" 
                   fill
                   className="object-contain drop-shadow-[0_20px_50px_rgba(0,194,101,0.2)]"

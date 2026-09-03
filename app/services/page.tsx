@@ -90,7 +90,7 @@ export default function ServicesPage() {
           <div className="w-full lg:w-[45%] relative">
             <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[450px] w-full">
               <Image 
-                src="/image copy 11.png" 
+                src="/wncoders-comprehensive-it-services-dashboard.png" 
                 alt="Dashboard and Mobile Mockup"
                 fill
                 className="object-contain lg:scale-110 xl:scale-125 lg:origin-right"

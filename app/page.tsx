@@ -68,8 +68,8 @@ export default function Home() {
           <div className="w-full lg:w-[45%] mt-16 lg:mt-0 flex justify-center lg:justify-start relative z-10">
             <div className="relative w-full max-w-[600px]">
               <Image
-                src="/4.png"
-                alt="Digital Solutions Hand"
+                src="/wncoders-digital-solutions.png"
+                alt="WNCoders Custom Software Development and Digital Solutions"
                 width={1200}
                 height={1200}
                 className="w-full h-auto object-contain object-right animate-float"
