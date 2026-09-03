@@ -22,13 +22,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wncoders.com'),
   title: "WNCoders | Building Digital Solutions",
   description: "Smart Software Solutions For Modern Businesses",
   keywords: "web development, app development, software solutions, IT company, Qatar, digital solutions",
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "WNCoders | Building Digital Solutions",
     description: "Smart Software Solutions For Modern Businesses",
-    url: "https://www.wncoders.com",
+    url: "/",
     siteName: "WNCoders",
     type: "website",
   },
