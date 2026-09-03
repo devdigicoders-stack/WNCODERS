@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 async function getClientLogosData() {
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
-    const res = await fetch(`${apiUrl}/client-logos`, { next: { revalidate: 60 } });
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api';
+    const res = await fetch(`${apiUrl}/client-logos`, { cache: 'no-store' });
     if (!res.ok) return [];
     return res.json();
   } catch (error) {
@@ -43,7 +43,7 @@ export default async function ClientsPage() {
   ];
 
   const fetchedLogos = await getClientLogosData();
-  const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:5000';
+  const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://127.0.0.1:5000';
 
   const logos = fetchedLogos.length > 0
     ? fetchedLogos.map((client: any) => 
