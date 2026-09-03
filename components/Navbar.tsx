@@ -29,28 +29,30 @@ export default function Navbar() {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (!document.getElementById('google-translate-script')) {
-      const script = document.createElement('script');
-      script.id = 'google-translate-script';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.body.appendChild(script);
-      
-      (window as any).googleTranslateElementInit = () => {
-        if ((window as any).google && (window as any).google.translate) {
-          new (window as any).google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'en,ar',
-            layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE
-          }, 'google_translate_element');
-        }
-      };
-    }
-
+    // Read current language from cookie
     const match = document.cookie.match(/(^|;) ?googtrans=([^;]*)(;|$)/);
     if (match && match[2]) {
       const parts = match[2].split('/');
       if (parts.length > 2) setCurrentLang(parts[2]);
+    }
+
+    // Initialize Google Translate Element (script already loaded in layout.tsx)
+    const initTranslate = () => {
+      if ((window as any).google && (window as any).google.translate) {
+        new (window as any).google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,ar',
+          layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    };
+
+    // If Google Translate is already loaded, init immediately; otherwise wait for callback
+    if ((window as any).google && (window as any).google.translate) {
+      initTranslate();
+    } else {
+      // Assign the callback for when the script finishes loading
+      (window as any).googleTranslateElementInit = initTranslate;
     }
   }, []);
 

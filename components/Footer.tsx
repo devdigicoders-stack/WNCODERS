@@ -47,14 +47,19 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Services */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="text-white font-bold mb-6 text-[17px]">Services</h4>
             <ul className="flex flex-col items-center md:items-start gap-4">
-              {['Web Development', 'Mobile App Development', 'UI/UX Design', 'Cloud Solutions', 'IT Consulting'].map((link, i) => (
+              {[
+                { name: 'Web Development', href: '/services/web-development' },
+                { name: 'Mobile App Development', href: '/services/app-development' },
+                { name: 'UI/UX Design', href: '/services/ui-ux-design' },
+                { name: 'Cloud Solutions', href: '/services/cloud-devops' },
+                { name: 'Digital Marketing', href: '/services/digital-marketing' },
+              ].map((link, i) => (
                 <li key={i}>
-                  <Link href="/services" className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
-                    {link}
+                  <Link href={link.href} className="text-gray-300 hover:text-[#00C265] text-[15px] font-medium transition-colors">
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -127,9 +132,9 @@ export default function Footer() {
             © {new Date().getFullYear()} WORKNESTCONNECT. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors text-[14px] font-medium">Facebook</Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors text-[14px] font-medium">Twitter</Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors text-[14px] font-medium">LinkedIn</Link>
+            <a href="https://www.facebook.com/worknestconnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-[14px] font-medium">Facebook</a>
+            <a href="https://twitter.com/worknestconnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-[14px] font-medium">Twitter</a>
+            <a href="https://www.linkedin.com/company/worknestconnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-[14px] font-medium">LinkedIn</a>
           </div>
         </div>
       </div>

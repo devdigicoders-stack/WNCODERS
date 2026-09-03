@@ -125,15 +125,6 @@ export default function Testimonials() {
 
   return (
     <section className="w-full bg-[#f8f9fa] pt-24 pb-6 border-t border-gray-200 overflow-hidden relative">
-      <style>{`
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 mb-12 sm:mb-16 relative flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
         <div className="text-left">

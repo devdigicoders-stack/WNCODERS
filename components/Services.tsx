@@ -5,10 +5,10 @@ import {
   LuCode, 
   LuSmartphone, 
   LuCloud, 
-  LuPenTool, 
-  LuUsers, 
+  LuPenTool,
   LuMegaphone,
-  LuArrowRight
+  LuArrowRight,
+  LuDatabase
 } from 'react-icons/lu';
 import DemoModal from './DemoModal';
 
@@ -43,7 +43,7 @@ const services = [
   {
     title: 'Database & API Integration',
     description: 'Seamless data exchange and robust database architecture.',
-    icon: LuCode,
+    icon: LuDatabase,
     href: '/services/database-api-integration',
   },
   {

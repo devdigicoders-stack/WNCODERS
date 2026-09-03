@@ -2,9 +2,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuChevronRight, LuHeadphones, LuShieldCheck, LuMapPin, LuPhone, LuMail, LuClock, LuSend, LuBuilding, LuLifeBuoy, LuBriefcase, LuGlobe, LuPlus, LuMinus, LuPhoneCall, LuFileText, LuRocket } from 'react-icons/lu';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { LuChevronRight, LuHeadphones, LuShieldCheck, LuMapPin, LuPhone, LuMail, LuClock, LuSend, LuBuilding, LuLifeBuoy, LuBriefcase, LuGlobe, LuPlus, LuMinus, LuPhoneCall, LuFileText, LuRocket, LuArrowRight } from 'react-icons/lu';
+import { toast } from 'react-toastify';
 
 export default function ContactPage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -172,7 +171,7 @@ export default function ContactPage() {
                   <div className="flex flex-col items-center">
                      <h4 className="text-[#040f1a] font-bold text-[15px] mb-1.5">Working Hours</h4>
                      <p className="text-gray-500 text-sm leading-relaxed">
-                        Mon - Fri: 9:00 AM - 6:00 PM<br/>Sat - Sun: Closed
+                        Sun - Thu: 9:00 AM - 6:00 PM<br/>Fri - Sat: Closed
                      </p>
                   </div>
                </div>
@@ -259,7 +258,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Sales & Partnerships</h3>
                   <p className="text-gray-500 text-sm mb-4">Interested in our services? Let's talk about how we can help your business grow.</p>
-                  <a href="mailto:info@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">info@worknestconnect.com</a>
+                  <a href="mailto:sales@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">sales@worknestconnect.com</a>
                </div>
 
                {/* Support */}
@@ -269,7 +268,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Technical Support</h3>
                   <p className="text-gray-500 text-sm mb-4">Already a customer? Our dedicated support team is here to help you 24/7.</p>
-                  <a href="mailto:info@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">info@worknestconnect.com</a>
+                  <a href="mailto:support@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">support@worknestconnect.com</a>
                </div>
 
                {/* Press */}
@@ -279,7 +278,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#040f1a] mb-2">Press & Media</h3>
                   <p className="text-gray-500 text-sm mb-4">For media inquiries, interviews, or press resources, please contact our PR team.</p>
-                  <a href="mailto:info@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">info@worknestconnect.com</a>
+                  <a href="mailto:media@worknestconnect.com" className="text-[#00C265] font-bold hover:underline">media@worknestconnect.com</a>
                </div>
             </div>
          </div>
@@ -380,12 +379,8 @@ export default function ContactPage() {
          </div>
       </section>
 
-      {/* Toast Container */}
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} closeOnClick pauseOnHover theme="light" />
     </main>
   );
 }
 
-const LuArrowRight = ({ size }: { size: number }) => (
-   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height={size} width={size} xmlns="http://www.w3.org/2000/svg"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-);
+

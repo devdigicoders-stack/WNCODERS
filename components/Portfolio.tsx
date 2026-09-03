@@ -111,10 +111,6 @@ export default function Portfolio() {
         </div>
 
         {/* Right Scroll Area */}
-        <style>{`
-          .hide-scroll::-webkit-scrollbar { display: none; }
-          .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-        `}</style>
 
         <div 
           ref={scrollRef}
@@ -141,11 +137,12 @@ export default function Portfolio() {
                 {/* Image Container */}
                 <div className="w-full h-[220px] bg-gray-50 relative overflow-hidden">
                   <Image 
-                    src={project.imageUrl && project.imageUrl.startsWith('http') ? project.imageUrl : (project.imageUrl ? `http://localhost:5000${project.imageUrl}` : "/image copy 5.png")} 
+                    src={project.imageUrl && project.imageUrl.startsWith('http') ? project.imageUrl : (project.imageUrl ? `${process.env.NEXT_PUBLIC_API_URL?.replace('/api','') || 'http://localhost:5000'}${project.imageUrl}` : "/image copy 5.png")} 
                     alt={project.title || "Project Image"}
                     fill
                     className="object-contain group-hover:scale-105 transition-transform duration-500"
-                    unoptimized
+                    loading="lazy"
+                    sizes="(max-width: 768px) 280px, 340px"
                   />
                   {project.status && (
                     <div className={`absolute top-4 right-4 px-3 py-1 text-[11px] font-bold rounded-full ${project.status === 'Completed' ? 'bg-[#00C265] text-white' : 'bg-orange-500 text-white shadow-sm'}`}>

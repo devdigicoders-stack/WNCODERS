@@ -1,19 +1,17 @@
-"use client";
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  LuArrowRight, LuUsers, LuRocket, LuTarget, LuChartBar, 
-  LuLaptop, LuLayoutTemplate, LuSmartphone, LuMegaphone, LuBot, 
-  LuCloud, LuPaintbrush, LuDatabase, LuCode, LuBuilding, 
-  LuCircleCheck, LuSearch, LuLightbulb, LuPenTool, LuX,
-  LuUpload, LuTrendingUp 
-} from 'react-icons/lu';
+import type { Metadata } from 'next';
+import { LuArrowRight, LuCode } from 'react-icons/lu';
 import { FaUsers, FaRocket, FaBullseye, FaChartLine, FaCheckCircle, FaSearch, FaPencilAlt, FaCode } from 'react-icons/fa';
-import DemoModal from '../../components/DemoModal';
+import AboutCTASection from '../../components/AboutCTASection';
+
+export const metadata: Metadata = {
+  title: 'About Us | WNCoders - Building Digital Solutions',
+  description: 'Learn about WNCoders — the merger of DigiCoders Technologies and WorkNest Connect. Two expert teams delivering innovative digital solutions.',
+};
 
 export default function AboutPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <main className="w-full flex flex-col items-center justify-center min-h-screen bg-white">
@@ -41,12 +39,12 @@ export default function AboutPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <button 
-                onClick={() => document.getElementById('partnership-cards')?.scrollIntoView({ behavior: 'smooth' })} 
+              <a
+                href="#partnership-cards"
                 className="w-full sm:w-auto px-6 py-3 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-lg shadow-[#00C265]/20 flex items-center justify-center gap-2"
               >
                 Explore Partnership <LuArrowRight size={18} />
-              </button>
+              </a>
               <Link href="/contact" className="w-full sm:w-auto px-6 py-3 bg-transparent border-2 border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
                 Start a Project <LuArrowRight size={18} className="text-[#00C265]" />
               </Link>
@@ -61,7 +59,6 @@ export default function AboutPage() {
               fill
               className="object-contain"
               priority
-              unoptimized
             />
           </div>
         </div>
@@ -193,7 +190,7 @@ export default function AboutPage() {
                  width={600}
                  height={600}
                  className="object-contain w-[130%] md:w-[150%] max-w-none md:-mr-16 drop-shadow-2xl"
-                 unoptimized
+                 sizes="(max-width: 768px) 100vw, 50vw"
                />
             </div>
           </div>
@@ -236,7 +233,7 @@ export default function AboutPage() {
                  width={600}
                  height={600}
                  className="object-contain w-[130%] md:w-[150%] max-w-none md:-mr-16 drop-shadow-xl"
-                 unoptimized
+                 sizes="(max-width: 768px) 100vw, 50vw"
                />
             </div>
           </div>
@@ -306,7 +303,7 @@ export default function AboutPage() {
                width={800}
                height={800}
                className="object-contain w-[110%] max-w-none md:w-full h-auto drop-shadow-[0_0_30px_rgba(0,194,101,0.15)]"
-               unoptimized
+               sizes="(max-width: 1024px) 100vw, 45vw"
              />
           </div>
 
@@ -337,7 +334,7 @@ export default function AboutPage() {
                 width={800}
                 height={600}
                 className="object-contain object-left w-full sm:w-[90%] h-auto drop-shadow-[0_0_15px_rgba(0,194,101,0.15)]"
-                unoptimized
+                sizes="(max-width: 1024px) 100vw, 55vw"
               />
             </div>
           </div>
@@ -385,17 +382,7 @@ export default function AboutPage() {
             <p className="text-gray-400 text-lg mb-10 max-w-md leading-relaxed">
               Have an idea or project in mind? Let's turn it into a digital success story.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Link href="/contact" className="px-6 py-3.5 bg-[#00C265] hover:bg-[#00a355] text-white rounded-xl font-bold transition-all shadow-[0_5px_20px_rgba(0,194,101,0.2)] flex items-center gap-2 text-[15px]">
-                Start a Project <LuArrowRight size={18} strokeWidth={2.5} />
-              </Link>
-              <button 
-                onClick={() => setIsModalOpen(true)}
-                className="px-6 py-3.5 bg-transparent border-[1.5px] border-[#00C265] text-white hover:bg-[#00C265]/10 rounded-xl font-bold transition-all flex items-center gap-2 text-[15px]"
-              >
-                Talk to Our Team <LuArrowRight size={18} className="text-[#00C265]" strokeWidth={2.5} />
-              </button>
-            </div>
+            <AboutCTASection />
           </div>
           <div 
             className="w-full flex items-center justify-end relative mt-8 lg:mt-0"
@@ -410,13 +397,12 @@ export default function AboutPage() {
                width={800}
                height={800}
                className="object-contain w-full md:w-[125%] max-w-none md:-mr-10 drop-shadow-2xl"
-               unoptimized
+               sizes="(max-width: 1024px) 100vw, 52vw"
              />
           </div>
         </div>
       </section>
 
-      <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 }
