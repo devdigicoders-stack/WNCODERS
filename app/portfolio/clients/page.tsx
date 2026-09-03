@@ -43,7 +43,12 @@ export default async function ClientsPage() {
   ];
 
   const fetchedLogos = await getClientLogosData();
-  const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://127.0.0.1:5000';
+  
+  let backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/api\/?$/, '') || 'http://127.0.0.1:5000';
+  if (backendUrl && !backendUrl.startsWith('http')) {
+    // If the environment variable is malformed (e.g. missing https://), use the correct production URL
+    backendUrl = 'https://api.wncoders.com';
+  }
 
   const logos = fetchedLogos.length > 0
     ? fetchedLogos.map((client: any) => 
