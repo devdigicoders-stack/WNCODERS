@@ -12,8 +12,20 @@ export const metadata: Metadata = {
   description: 'See the amazing clients we have worked with at WNCoders.',
 };
 
-export default function ClientsPage() {
-  const logos = [
+async function getClientLogosData() {
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+    const res = await fetch(`${apiUrl}/client-logos`, { next: { revalidate: 60 } });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (error) {
+    console.error("Failed to fetch client logos:", error);
+    return [];
+  }
+}
+
+export default async function ClientsPage() {
+  const fallbackLogos = [
     "/logo/wncoders-client-partner-1.png",
     "/logo/wncoders-client-partner-2.png",
     "/logo/wncoders-client-partner-3.png",
@@ -29,6 +41,15 @@ export default function ClientsPage() {
     "/logo/wncoders-client-partner-14.png",
     "/logo/divine-perfume-client-logo.jpeg"
   ];
+
+  const fetchedLogos = await getClientLogosData();
+  const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:5000';
+
+  const logos = fetchedLogos.length > 0
+    ? fetchedLogos.map((client: any) => 
+        client.imageUrl?.startsWith('http') ? client.imageUrl : `${backendUrl}${client.imageUrl}`
+      )
+    : fallbackLogos;
 
   return (
     <main className="flex flex-col flex-1 bg-[#f8f9fa] font-sans min-h-screen">
@@ -142,7 +163,7 @@ export default function ClientsPage() {
           
           {/* Logos Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-6xl mx-auto">
-             {logos.map((logo, idx) => (
+             {logos.map((logo: string, idx: number) => (
                <div key={idx} className="bg-white border border-gray-100 rounded-xl h-32 p-4 flex items-center justify-center hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:border-[#00C265]/30 transition-all duration-300 group cursor-pointer overflow-hidden">
                   <div className="relative w-full h-full flex items-center justify-center">
                      <Image src={logo} alt={`Client Logo ${idx + 1}`} fill className="object-contain scale-[1.4] transition-transform duration-500 group-hover:scale-[1.55]" unoptimized />
