@@ -58,9 +58,28 @@ export default function Navbar() {
     setCurrentLang(lang);
     setIsLangMenuOpen(false);
     
-    // Set cookies for persistence
-    document.cookie = `googtrans=/en/${lang}; path=/`;
-    document.cookie = `googtrans=/en/${lang}; domain=${window.location.hostname}; path=/`;
+    const hostname = window.location.hostname;
+    const baseDomain = hostname.startsWith('www.') ? hostname.substring(4) : hostname;
+    
+    if (lang === 'en') {
+      // Clear all possible variations of the googtrans cookie to reset to default English
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${hostname}; path=/`;
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${hostname}; path=/`;
+      if (hostname !== baseDomain) {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${baseDomain}; path=/`;
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${baseDomain}; path=/`;
+      }
+    } else {
+      // Set cookies for the new language across all possible domain variations
+      document.cookie = `googtrans=/en/${lang}; path=/`;
+      document.cookie = `googtrans=/en/${lang}; domain=${hostname}; path=/`;
+      document.cookie = `googtrans=/en/${lang}; domain=.${hostname}; path=/`;
+      if (hostname !== baseDomain) {
+        document.cookie = `googtrans=/en/${lang}; domain=${baseDomain}; path=/`;
+        document.cookie = `googtrans=/en/${lang}; domain=.${baseDomain}; path=/`;
+      }
+    }
     
     // Reload page to apply translation safely
     window.location.reload();
