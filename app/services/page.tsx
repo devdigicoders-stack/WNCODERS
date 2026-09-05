@@ -9,7 +9,7 @@ import Portfolio from '../../components/Portfolio';
 
 export const metadata: Metadata = {
   title: 'Our Services | WNCoders',
-  description: 'Smart Software Solutions For Modern Businesses',
+  description: 'Software Development Agency Qatar for Modern Businesses',
 };
 
 export default function ServicesPage() {
@@ -44,13 +44,13 @@ export default function ServicesPage() {
             
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-[1.15] tracking-tight text-white">
-              Smart Software Solutions <br className="hidden md:block" />
-              For <span className="text-[#00C265]">Modern Businesses</span>
+              Software Development Agency Qatar <br className="hidden md:block" />
+              for <span className="text-[#00C265]">Modern Businesses</span>
             </h1>
             
             {/* Subheading */}
             <p className="text-gray-400 text-[16px] sm:text-[18px] leading-[1.6] max-w-2xl mt-2">
-              We help businesses automate, streamline and scale with custom software solutions that drive efficiency, improve productivity and accelerate growth.
+              We help businesses automate, streamline and scale with CRM software development Qatar, delivering custom solutions that improve productivity, drive efficiency and accelerate growth.
             </p>
             
             {/* Action Buttons */}

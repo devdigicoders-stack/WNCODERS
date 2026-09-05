@@ -18,7 +18,7 @@ export default function Partnership() {
             </h2>
           </div>
           <p className="text-gray-500 max-w-xl text-[15px] leading-relaxed">
-            Our partnership is built on a shared belief that technology, creativity and strategy together create powerful digital experiences.
+            Our partnership with a web design development company in Qatar is built on a shared belief that technology, creativity, and strategy together create powerful digital experiences.
           </p>
         </div>
 

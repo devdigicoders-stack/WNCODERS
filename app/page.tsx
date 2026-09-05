@@ -41,12 +41,12 @@ export default function Home() {
 
             {/* Main Heading */}
             <h1 className="text-[32px] sm:text-4xl lg:text-[46px] font-semibold leading-[1.15] tracking-tight text-white mt-2">
-              Building Digital Solutions <br /> That <span className="text-[#00C265]">Drive Success</span>
+              Software Development Company in Qatar <br /> Solutions That <span className="text-[#00C265]">Drive Growth</span>
             </h1>
 
             {/* Description */}
             <p className="text-base lg:text-[15px] text-gray-300 max-w-[480px] leading-relaxed font-normal">
-              We are a software development company delivering innovative, scalable and secure IT solutions to help businesses grow in the digital era.
+              We are a software development company delivering innovative, scalable and secure IT solutions, including mobile app development Doha, to help businesses grow in the digital era.
             </p>
 
             {/* Action Buttons */}

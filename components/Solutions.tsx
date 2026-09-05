@@ -72,7 +72,7 @@ export default function Solutions() {
             Powerful Software Solutions for <span className="text-[#00C265]">Every Business Need</span>
           </h2>
           <p className="text-gray-500 text-[16px] sm:text-[18px]">
-            We design and develop powerful software solutions that help you manage operations, engage customers and grow your business.
+            We design and develop powerful cloud software development Qatar solutions that help you manage operations, engage customers, and grow your business.
           </p>
         </div>
 
