@@ -18,6 +18,11 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
   const [toc, setToc] = useState<{ id: string, text: string, level: number }[]>([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   useEffect(() => {
     if (!loading && post && post.content) {
@@ -240,17 +245,29 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
                <div className="mt-8 mb-16 border-t border-gray-100 pt-10">
                  <h2 className="text-2xl md:text-3xl font-bold text-[#040f1a] mb-8">Frequently Asked Questions</h2>
                  <div className="flex flex-col gap-4">
-                   {post.faqs.map((faq: any, index: number) => (
-                     <div key={index} className="bg-gray-50 border border-gray-100 p-6 md:p-8 shadow-sm">
-                       <h3 className="text-lg font-bold text-[#040f1a] mb-3 flex items-start gap-3">
-                         <span className="text-[#00C265] mt-1 shrink-0 font-extrabold text-xl">Q.</span>
-                         <span>{faq.question}</span>
-                       </h3>
-                       <p className="text-gray-600 leading-relaxed font-medium pl-9">
-                         {faq.answer}
-                       </p>
-                     </div>
-                   ))}
+                    {post.faqs.map((faq: any, index: number) => (
+                      <div key={index} className="bg-gray-50 border border-gray-100 shadow-sm overflow-hidden">
+                        <button 
+                          onClick={() => toggleFaq(index)}
+                          className="w-full p-6 md:p-8 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
+                        >
+                          <h3 className="text-lg font-bold text-[#040f1a] flex items-start gap-3 m-0">
+                            <span className="text-[#00C265] mt-0.5 shrink-0 font-extrabold text-xl">Q.</span>
+                            <span>{faq.question}</span>
+                          </h3>
+                          <span className={`text-gray-400 transform transition-transform duration-300 shrink-0 ml-4 ${openFaqIndex === index ? 'rotate-180' : ''}`}>
+                            <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                          </span>
+                        </button>
+                        <div 
+                          className={`transition-all duration-300 ease-in-out ${openFaqIndex === index ? 'max-h-[1000px] opacity-100 pb-6 md:pb-8' : 'max-h-0 opacity-0 pb-0'}`}
+                        >
+                          <p className="text-gray-600 leading-relaxed font-medium pl-[52px] pr-6 md:pr-8 m-0">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                  </div>
                </div>
              )}
