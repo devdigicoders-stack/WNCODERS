@@ -108,13 +108,13 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
     
     switch (platform) {
       case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        shareUrl = `https://www.facebook.com/worknestconnect`;
         break;
       case 'linkedin':
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        shareUrl = `https://www.linkedin.com/company/worknestconnect`;
         break;
       case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+        shareUrl = `https://twitter.com/worknestconnect`;
         break;
       case 'copy':
         navigator.clipboard.writeText(window.location.href);
@@ -234,6 +234,26 @@ export default function SingleBlogPage({ params }: { params: Promise<{ slug: str
                className="prose prose-lg max-w-none text-gray-600 mb-16 break-words prose-a:text-[#00C265] prose-a:no-underline hover:prose-a:underline prose-p:my-3 prose-headings:my-4"
                dangerouslySetInnerHTML={{ __html: post.content }}
              />
+
+             {/* FAQs Section */}
+             {post.faqs && post.faqs.length > 0 && (
+               <div className="mt-8 mb-16 border-t border-gray-100 pt-10">
+                 <h2 className="text-2xl md:text-3xl font-bold text-[#040f1a] mb-8">Frequently Asked Questions</h2>
+                 <div className="flex flex-col gap-4">
+                   {post.faqs.map((faq: any, index: number) => (
+                     <div key={index} className="bg-gray-50 border border-gray-100 p-6 md:p-8 shadow-sm">
+                       <h3 className="text-lg font-bold text-[#040f1a] mb-3 flex items-start gap-3">
+                         <span className="text-[#00C265] mt-1 shrink-0 font-extrabold text-xl">Q.</span>
+                         <span>{faq.question}</span>
+                       </h3>
+                       <p className="text-gray-600 leading-relaxed font-medium pl-9">
+                         {faq.answer}
+                       </p>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             )}
 
           </div>
           
