@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     title: "WNCoders | Building Digital Solutions",
     description: "Smart Software Solutions For Modern Businesses",
   },
+  verification: {
+    google: "TvXlDRXHzWuAJVaT-xMGKadiEp1GCh4N4-faoVmHBpM",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
