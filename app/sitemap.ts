@@ -1,121 +1,72 @@
-import { MetadataRoute } from 'next';
-
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wncoders.com';
+import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://www.wncoders.com";
+
   return [
-    // ===== HOME =====
     {
-      url: `${BASE_URL}/`,
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-
-    // ===== ABOUT =====
-    {
-      url: `${BASE_URL}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.7,
-    },
-
-    // ===== SERVICES (Main Page) =====
-    {
-      url: `${BASE_URL}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-
-    // ===== INDIVIDUAL SERVICES =====
-    {
-      url: `${BASE_URL}/services/web-development`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.85,
     },
     {
-      url: `${BASE_URL}/services/app-development`,
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.85,
     },
     {
-      url: `${BASE_URL}/services/ui-ux-design`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
     },
     {
-      url: `${BASE_URL}/services/cloud-devops`,
+      url: `${baseUrl}/portfolio/clients`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
     },
     {
-      url: `${BASE_URL}/services/digital-marketing`,
+      url: `${baseUrl}/portfolio/projects`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
     },
     {
-      url: `${BASE_URL}/services/database-api-integration`,
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-
-    // ===== PORTFOLIO =====
-    {
-      url: `${BASE_URL}/portfolio/projects`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
     },
     {
-      url: `${BASE_URL}/portfolio/clients`,
+      url: `${baseUrl}/team`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.75,
-    },
-
-    // ===== BLOG =====
-    {
-      url: `${BASE_URL}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-
-    // ===== TEAM =====
-    {
-      url: `${BASE_URL}/team`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.6,
-    },
-
-    // ===== CONTACT =====
-    {
-      url: `${BASE_URL}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.7,
-    },
-
-    // ===== LEGAL PAGES =====
-    {
-      url: `${BASE_URL}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.4,
     },
     {
-      url: `${BASE_URL}/terms-and-conditions`,
+      url: `${baseUrl}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/services/web-development`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/services/app-development`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/services/ui-ux-design`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/services/cloud-devops`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/services/digital-marketing`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/services/database-api-integration`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/terms-and-conditions`,
+      lastModified: new Date(),
     },
   ];
 }
