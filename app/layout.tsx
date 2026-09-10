@@ -58,6 +58,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://translate.google.com" />
         <link rel="dns-prefetch" href="//translate.googleapis.com" />
+
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZYYM5LQBWV"
+          strategy="afterInteractive"
+          id="ga-script"
+        />
+        <Script id="ga-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZYYM5LQBWV');
+          `}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {/* Google Translate Script - afterInteractive so it loads after page is ready */}
