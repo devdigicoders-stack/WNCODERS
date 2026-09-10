@@ -69,7 +69,7 @@ export default function Solutions() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-[32px] lg:text-[36px] font-bold text-[#040f1a] mb-4 leading-tight">
-            Powerful Software Solutions for <span className="text-[#00C265]">Every Business Need</span>
+            Advanced Web and AI Solutions in Qatar for <span className="text-[#00C265]">Every Business Need</span>
           </h2>
           <p className="text-gray-500 text-[16px] sm:text-[18px]">
             We design and develop powerful cloud software development Qatar solutions that help you manage operations, engage customers, and grow your business.

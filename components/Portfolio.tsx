@@ -85,7 +85,7 @@ export default function Portfolio() {
             OUR WORK
           </span>
           <h2 className="text-[#040f1a] text-2xl md:text-[32px] font-bold leading-tight mb-8">
-            Projects That Speak <br className="hidden lg:block"/> For Themselves
+            Projects That Showcase <br className="hidden lg:block"/>Software Solutions
           </h2>
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">

@@ -69,7 +69,7 @@ export default function Services() {
               OUR SERVICES
             </span>
             <h2 className="text-[#040f1a] text-3xl md:text-[36px] font-bold leading-tight">
-              End-to-End Digital <span className="text-[#00C265]">Solutions</span>
+              Empowering Business Growth with <span className="text-[#00C265]">Digital Solutions in Qatar</span>
             </h2>
           </div>
           <Link href="/services" className="inline-flex items-center gap-2 px-6 py-2.5 border-[1.5px] border-[#00C265] text-[#00C265] hover:bg-[#00C265] hover:text-white rounded font-bold transition-colors">

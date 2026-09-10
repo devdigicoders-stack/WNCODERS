@@ -46,7 +46,7 @@ export default function Home() {
 
             {/* Description */}
             <p className="text-base lg:text-[15px] text-gray-300 max-w-[480px] leading-relaxed font-normal">
-              We are a software development company delivering innovative, scalable and secure IT solutions, including mobile app development Doha, to help businesses grow in the digital era.
+              We are a web development company in Qatar delivering innovative, scalable and secure digital solutions, including mobile app development in Doha, ecommerce development and AI-powered solutions, to help businesses grow in the digital era.
             </p>
 
             {/* Action Buttons */}

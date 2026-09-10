@@ -43,7 +43,7 @@ export default function BlogSection() {
               OUR BLOG
             </span>
             <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold leading-tight">
-              Latest Insights & <span className="text-[#00C265]">Articles</span>
+              Latest Insights & Articles on <span className="text-[#00C265]">Software Development in Doha</span>
             </h2>
           </div>
           <Link href="/blog" className="inline-flex items-center gap-2 px-6 py-2.5 border-[1.5px] border-[#040f1a] text-[#040f1a] hover:bg-[#040f1a] hover:text-white rounded font-bold transition-colors">

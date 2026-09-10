@@ -13,12 +13,12 @@ export default function Partnership() {
               OUR PARTNERSHIP
             </span>
             <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold leading-tight">
-              Where Technology Meets <br className="hidden md:block" />
-              <span className="text-[#00C265]">Business Growth</span>
+              Empowering Business Growth with <br className="hidden md:block" />
+              <span className="text-[#00C265]">Digital Solutions in Qatar</span>
             </h2>
           </div>
           <p className="text-gray-500 max-w-xl text-[15px] leading-relaxed">
-            Our partnership with a web design development company in Qatar is built on a shared belief that technology, creativity, and strategy together create powerful digital experiences.
+            Our partnership in custom software development in Qatar is built on a shared belief that technology, creativity, and strategy together create powerful digital experiences.
           </p>
         </div>
 

@@ -51,7 +51,7 @@ export default function Process() {
             OUR PROCESS
           </span>
           <h2 className="text-[#040f1a] text-3xl lg:text-[34px] font-bold leading-tight mb-4">
-            From Idea to <span className="text-[#00C265]">Impact</span>
+            From Idea to <span className="text-[#00C265]">Software Innovation</span>
           </h2>
           <p className="text-gray-500 text-[14px] leading-relaxed max-w-sm mx-auto xl:mx-0">
             A transparent and agile process that turns your ideas into successful digital solutions.

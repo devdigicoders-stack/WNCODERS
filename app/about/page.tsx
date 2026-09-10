@@ -31,11 +31,11 @@ export default function AboutPage() {
               ABOUT US
             </span>
             <h1 className="text-white text-4xl md:text-[48px] lg:text-[56px] font-bold leading-[1.1] mb-6">
-              Two Teams.<br />
-              <span className="text-[#00C265]">One Vision.</span>
+              Two Teams. One Vision for<br />
+              <span className="text-[#00C265]">web application development Qatar</span>
             </h1>
             <p className="text-gray-300 text-base md:text-lg max-w-xl leading-relaxed mb-8">
-              DigiCoders Technologies and WorkNest Connect come together to deliver powerful digital solutions that drive business growth and create long-term value.
+              DigiCoders Technologies and WorkNest Connect come together as a leading software development company in Qatar, driving digital transformation Qatar with high-impact software solutions Qatar for business growth.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -84,11 +84,10 @@ export default function AboutPage() {
           </div>
           
           <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold mb-6">
-            Where Technology Meets <span className="text-[#00C265]">Business Growth</span>
+            Where Business Software Qatar <span className="text-[#00C265]">Drives Growth</span>
           </h2>
           <p className="text-gray-600 max-w-[650px] mx-auto mb-12 text-[16px] leading-relaxed">
-            Our partnership is built on a shared belief that technology, <br className="hidden md:block" />
-            creativity, and strategy together create powerful digital experiences.
+            Our shared belief in technology, creativity, and strategy powers high-impact digital experiences via AI development in Qatar.
           </p>
 
           {/* Cards Grid */}
@@ -209,7 +208,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <p className="text-gray-600 text-[14px] leading-relaxed max-w-sm mb-6">
-                A digital growth partner helping brands connect, engage, and grow in the digital era.
+                A digital growth partner helping brands connect, engage, and grow through expert digital marketing Qatar.
               </p>
               <ul className="space-y-3.5 relative z-10">
                 {[
@@ -254,10 +253,10 @@ export default function AboutPage() {
               <div className="w-10 border-t-[1.5px] border-dashed border-[#00C265]/70"></div>
             </div>
             <h2 className="text-[#040f1a] text-3xl md:text-[40px] font-bold mb-4">
-              From Idea to <span className="text-[#00C265]">Impact</span>
+              From Idea to Impact: <span className="text-[#00C265]">IT Solutions Qatar</span>
             </h2>
             <p className="text-gray-500 text-[15px] max-w-lg mx-auto">
-              A streamlined process focused on transparency, collaboration, and results.
+              Our transparent, collaborative process drives scalable digital transformation Qatar.
             </p>
           </div>
 
@@ -323,7 +322,7 @@ export default function AboutPage() {
               Complete Digital <span className="text-[#00C265]">Ecosystem.</span>
             </h2>
             <p className="text-gray-300 text-[15px] max-w-md mb-2 leading-relaxed">
-              End-to-end digital services to help your business succeed in the modern world.
+              End-to-end capabilities driving modern business success with tailored enterprise application development in Qatar.
             </p>
 
             {/* Right Grid (Replaced with Image) */}
@@ -377,10 +376,10 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[48%_52%] gap-8 lg:gap-12 items-center">
           <div>
             <h2 className="text-white text-4xl md:text-[44px] font-bold mb-6 leading-tight">
-              Let's Build Something<br/>Bigger <span className="text-[#00C265]">Together</span>
+              Let's Build Scalable Solutions<br/><span className="text-[#00C265]">Together in Qatar</span>
             </h2>
             <p className="text-gray-400 text-lg mb-10 max-w-md leading-relaxed">
-              Have an idea or project in mind? Let's turn it into a digital success story.
+              Have a project in mind? Turn vision into success with proven technology consulting Qatar.
             </p>
             <AboutCTASection />
           </div>
