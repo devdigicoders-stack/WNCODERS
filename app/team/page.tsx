@@ -52,10 +52,10 @@ export default function TeamPage() {
               </div>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 leading-tight">
-                Meet the People Behind <br className="hidden md:block" /> Our Success
+                Meet the Dedicated Developers Behind <br className="hidden md:block" /> Your Digital Success in Qatar
               </h1>
               <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
-                We are a passionate team of innovators, developers, and problem-solvers dedicated to building powerful digital solutions that drive real business impact.
+                We are developers and innovators dedicated to deploying resilient IT solutions in Qatar and enterprise cloud solutions in Doha for business impact.
               </p>
 
               {/* Stats Grid */}

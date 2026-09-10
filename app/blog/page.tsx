@@ -79,7 +79,7 @@ function BlogContent() {
             </span>
             <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight mb-6">
               Insights, Ideas.<br />
-              <span className="text-[#00C265]">Innovation.</span>
+              <span className="text-[#00C265]">IT & Software Innovation in Qatar</span>
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-[500px]">
               Stay updated with the latest trends, insights and expert opinions from the world of software and technology.

@@ -80,12 +80,12 @@ export default async function ClientsPage() {
             </div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-[1.1] text-white mb-6">
-              Building Strong Partnerships <br className="hidden sm:block" />
-              <span className="text-[#00C265]">Delivering Real Results</span>
+              Trusted by Leading Businesses for <br className="hidden sm:block" />
+              <span className="text-[#00C265]">Software & Web Development in Doha</span>
             </h1>
             
             <p className="text-gray-400 text-[17px] max-w-lg mb-10 leading-relaxed">
-              We are proud to work with forward-thinking companies across the globe. Their trust and collaboration drive our commitment to excellence.
+              we proudly partner with global enterprises, delivering top-tier custom software development in Qatar and high-performance mobile app solutions in Doha.
             </p>
             
             {/* Stats Row */}
@@ -159,11 +159,11 @@ export default async function ClientsPage() {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-[#040f1a] mb-6 text-center">
-            Companies <span className="text-[#00C265]">We Work With</span>
+            Companies We Work With for <span className="text-[#00C265]">Software & Mobile App Development in Qatar</span>
           </h2>
           
           <p className="text-gray-500 text-center max-w-2xl mx-auto mb-16 text-[17px] leading-relaxed">
-            We've had the privilege of working with forward-thinking companies from various industries. Here are some of our amazing clients.
+            We've had the privilege of providing custom software development in Qatar and mobile app development in Doha to our valued clients across industries.
           </p>
           
           {/* Logos Grid */}

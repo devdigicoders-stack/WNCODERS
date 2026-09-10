@@ -75,11 +75,11 @@ export default async function ProjectsPage() {
             </div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-[1.1] text-white mb-6">
-              Delivering Innovative <br className="hidden sm:block" /> Solutions That Drive <br className="hidden sm:block" /> <span className="text-[#00C265]">Success.</span>
+              Delivering Modern POS & Business Software <br className="hidden sm:block" /> That Drives <span className="text-[#00C265]">Commercial Success in Qatar.</span>
             </h1>
             
             <p className="text-gray-400 text-[17px] max-w-lg mb-10 leading-relaxed">
-              We take pride in building high-quality digital solutions that help businesses grow, scale, and succeed.
+              We build high-quality custom software development in Qatar that helps businesses in Doha scale and succeed.
             </p>
             
             {/* Stats Row */}
@@ -133,7 +133,7 @@ export default async function ProjectsPage() {
           </h2>
           
           <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12 text-[17px] leading-relaxed">
-            Explore a selection of our recent work across different industries. Each project is a testament to our commitment to excellence.
+            Explore our recent work across diverse industries. Each project reflects our commitment to advanced ecommerce development and AI solutions in Qatar.
           </p>
           
 

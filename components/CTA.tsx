@@ -57,10 +57,10 @@ export default function CTA() {
 
       <div className="max-w-[1000px] mx-auto text-center relative z-10">
         <h2 className="text-white text-3xl md:text-[40px] font-bold leading-tight mb-8">
-          Ready to Build Your <span className="text-[#00C265]">Idea with Web Designing</span>
+          Ready to Build Your Idea with <span className="text-[#00C265]">Top Web Designers in Qatar?</span>
         </h2>
         <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          Let's discuss your project with our mobile app development company Qatar experts and discover how we can help your business grow and succeed in the digital landscape.
+          Discuss your project with a premier AI development company in Qatar and discover how our enterprise software development in Doha drives intelligent, long-term business growth.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
