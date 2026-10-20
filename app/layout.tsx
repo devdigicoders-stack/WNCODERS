@@ -9,6 +9,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import PageTransitionLoader from "../components/PageTransitionLoader";
 import SocialSidebar from "../components/SocialSidebar";
 import AnnouncementBar from "../components/AnnouncementBar";
+import FloatingContact from "../components/FloatingContact";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <Footer />
         <ScrollToTop />
+        <FloatingContact />
       </body>
     </html>
   );
